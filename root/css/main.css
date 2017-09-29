@@ -1,0 +1,46 @@
+body {
+	background-color: rgb(210,210,210);
+	color: rgb(250,250,250);
+}
+
+.frame {
+	border: 7px solid rgb(65,62,119);
+	border-radius: 25px;
+	background-color: rgb(92,88,138);
+	margin: 50px auto;
+}
+
+#login_frame {
+	height: 300px;
+	width: 300px;
+}
+
+#login_frame > h1 {
+	text-align: center;
+}
+
+#login_frame > div {
+	left: 10%;
+	width: 80%;
+	height: auto;
+	border: 1px solid red;
+	position: relative;
+}
+
+#login_frame input{
+	width: 100%;
+}
+
+#login_frame input[type="submit"] {
+	display: block;
+	width: 100px;
+	margin: auto;
+}
+
+a:link, a:visited {
+	color: rgb(250,250,250);	
+}
+
+a:hover {
+	color: rgb(167,180,4);
+}
