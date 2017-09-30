@@ -8,6 +8,7 @@ body {
 	border-radius: 25px;
 	background-color: rgb(92,88,138);
 	margin: 50px auto;
+	width: 400px;
 }
 
 #login_frame {
