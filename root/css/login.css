@@ -1,0 +1,36 @@
+#login_frame {
+	height: 300px;
+	width: 400px;
+}
+
+
+#login_frame > div {
+	left: 10%;
+	width: 80%;
+	height: auto;
+	position: relative;
+}
+
+#login_frame input[type="submit"] {
+	display: block;
+	width: 40px;
+	margin: 0 auto 15px;
+}
+
+#sign_up_frame {
+	width: 400px;
+	height: 550px;
+}
+
+#sign_up_frame input[type="submit"]{
+	display: block;
+	width: 80px;
+	margin: 15px auto;
+}
+
+#sign_up_frame > div {
+	left: 10%;
+	width: 80%;
+	height: auto;
+	position: relative;
+}
