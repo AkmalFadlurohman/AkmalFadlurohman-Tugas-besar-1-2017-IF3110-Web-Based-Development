@@ -9,26 +9,45 @@
 		<h1>-- Sign up --</h1>
 
 		<div>
-			<form method="post">
-				Your name
-				<input type="text" name="real_name"><br/>
-				Username
-				<input type="text" name="real_name"><br/>
-				Email
-				<input type="Email" name="real_name"><br/>
-				Password
-				<input type="Password" name="real_name"><br/>
-				Confirm password
-				<input type="Password" name="real_name"><br/>
-				Phone number
-				<input type="text" name="real_name"><br/>
+			<form name="sign_up" method="post" action="sign_up.php" onsubmit="return validate_password();">
+				Your name*
+				<input type="text" name="full_name"><br/>
+				Username*
+				<input type="text" name="user_name"><br/>
+				Email*
+				<input type="Email" name="user_email"><br/>
+				Password*
+				<input type="Password" name="user_password"><br/>
+				Confirm password*
+				<input type="Password" name="confirm_password"><br/>
+				Phone number*
+				<input type="text" name="user_phone"><br/>
 
-				<input type="checkbox" name="is_driver" value="true">Also sign me up as a driver<br/>
-
+                <input type="button" value="Sign me up as driver" id="signAs_driver" style="width : 40%" onclick= "driver_signup();"><label id="driversign_status"><br></label>
+                <input type="text" name="is_driver" style="display:none">
 				<input type="submit" value="REGISTER">
 			</form>
+            <p><br>* Required field</p>
 		</div>
 	</div>
+    <script>
+    function validate_password()
+    {
+        var password = document.sign_up.user_password.value;
+        var confirm_password = document.sign_up.confirm_password.value;
+        if (password !== confirm_password)
+        {
+            window.alert("The passwords you entered didn't match");
+            return false;
+        }
+    }
+    function driver_signup()
+    {
+        document.getElementById("driversign_status").innerHTML= "Signed as driver";
+        document.getElementById("signAs_driver").style.display = "none";
+        document.sign_up.is_driver.value = "Yes";
+    }
+    </script>
 
 </body>
 </html>

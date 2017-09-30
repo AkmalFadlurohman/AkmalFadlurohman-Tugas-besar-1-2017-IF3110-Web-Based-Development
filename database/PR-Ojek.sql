@@ -1,7 +1,8 @@
 -- Database PR-Ojek
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-	`user_id`     INT         NOT NULL,
+	`user_id`     INT         NOT NULL AUTO_INCREMENT,
     `name`        VARCHAR(50) NOT NULL,
 	`email`       VARCHAR(50) NOT NULL,
 	`phone`       VARCHAR(20) NOT NULL,
@@ -13,11 +14,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 	PRIMARY KEY (`user_id`)
 );
 
-LOCK TABLES `user` WRITE;
-
-INSERT INTO `user` VALUES ('1','Donald Trump','donaldducktrump@gmail.com','08136','donaldduck','123456','Not_Driver',DEFAULT);
-UNLOCK TABLES;
-
+DROP TABLE IF EXISTS `driver`;
 CREATE TABLE IF NOT EXISTS `driver` (
 	`driver_id`     INT             NOT NULL,
 	`total_score`   DOUBLE(50,1)    NOT NULL,
@@ -27,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
 	CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `user` (`user_id`)
 );
 
+DROP TABLE IF EXISTS `driver_prefloc`;
 CREATE TABLE IF NOT EXISTS `driver_prefloc` (
 	`driver_id`   INT         NOT NULL,
     `pref_loc`    VARCHAR(50) NOT NULL,

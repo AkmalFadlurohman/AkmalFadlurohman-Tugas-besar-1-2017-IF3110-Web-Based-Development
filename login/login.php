@@ -1,7 +1,7 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
-            include '../db_pr-ojek.php';
+            include '../database/dbconnect.php';
             $user = $_POST['user_name'];
             $pass = $_POST['user_password'];
             $query=mysql_query("SELECT * FROM user WHERE username='".$user."' AND password='".$pass."'") or die(mysql_error());
@@ -17,7 +17,7 @@
                 
                 if($user == $dbusername && $pass == $dbpassword)
                 {
-                    header("Location: ../profile_page/profile.html");
+                    header("Location: ../order/order.html");
                 }
             } else {
                 include("login.html");
@@ -28,12 +28,5 @@
             }
             mysql_close($conn);
         }
-    }
-    
-    function clean_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
 ?>
