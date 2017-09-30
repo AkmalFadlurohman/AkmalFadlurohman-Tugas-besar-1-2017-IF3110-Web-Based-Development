@@ -29,14 +29,6 @@
                 header("Location: ../order/order.html");
             }
             mysql_close($conn);
-            /*else {
-                include("login.html");
-                echo "<script>
-                document.getElementById('error_credential').innerHTML = 'Invalid username or password!';
-                </script>";
-                header("Location: login.html");
-            }
-            */
         }
     }
 ?>
