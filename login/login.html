@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login to OneHundred</title>
+        <link rel="stylesheet" type="text/css" href="../css/default_style.css">
+            <link rel="stylesheet" type="text/css" href="../css/login.css">
+    </head>
+    <body>
+        <div id="login_frame" class="frame">
+            <h1>Welcome to PR-Ojek<img src="../img/logo.png" style="width: 70px;height: 50px;float: right"></h1>
+            <p style="text-align: center">"An ojek for anything you need"</p>
+            <br/><br/>
+            <h2>--- Login ---</h2>
+            <p id="error_credential" style="text-align: center;"></p>
+            <div>
+                <form name="login" method="POST" action="login.php" onsubmit="return validate();">
+                    Username
+                    <input type="text" name="user_name"><br/>
+                            
+                    Password
+                    <input type="Password" name="user_password"><br/>
+                                
+                    <input type="submit" value="Login" >
+                </form>
+                    
+                <a href="sign_up.html">Don't have an account?</a><br/>
+            </div>
+        </div>
+        <script>
+            function validate()
+            {
+                var username = document.login.user_name.value;
+                var password = document.login.user_password.value;
+                if (username==null || username=="")
+                {
+                    window.alert("Username can't be blank");
+                    return false;
+                }
+                else if (password==null || password=="")
+                {
+                    window.alert("Password can't be blank");
+                    return false;
+                }
+            }
+        </script>
+        
+    </body>
+</html>
