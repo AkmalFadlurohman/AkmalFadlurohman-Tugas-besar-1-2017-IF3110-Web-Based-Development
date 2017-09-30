@@ -1,0 +1,23 @@
+#container {
+	margin: auto;
+	width: 400px;
+}
+
+.button {
+	height: 70px;
+}
+
+#first {
+	background-color: red;
+	float: left;
+}
+
+#second {
+	background-color: blue;
+	float: left;
+}
+
+#third {
+	background-color: green;
+	float: 
+}
