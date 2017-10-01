@@ -30,5 +30,12 @@
             }
             mysql_close($conn);
         }
+        else {
+            include("sign_up.html");
+            echo "<script>
+            document.getElementById('error_signup').innerHTML = 'Please fill all the required field';
+            </script>";
+            header("Location: sign_up.html");
+        }
     }
 ?>
