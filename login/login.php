@@ -26,7 +26,7 @@
                 </script>";
                 header("Location: login.html");
             }
-            mysql_close($conn);
+            mysql_close();
         }
     }
 ?>
