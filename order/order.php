@@ -1,4 +1,3 @@
-<?php if (!isset($_SESSION['user'])) die("<br /><br />You must be logged in to view this page");?>
 <!DOCTYPE html>
 <html>
 <head>

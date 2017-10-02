@@ -14,7 +14,7 @@
             $password = $_POST['user_password'];
             $phone    = $_POST['user_phone'];
             
-            if($_POST['is_driver'] == "Yes")
+            if(isset($_POST['is_driver']))
             {
                 $status = 'driver';
             }
