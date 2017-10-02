@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['full_name']) &&
             !empty($_POST['username']) &&
@@ -7,6 +8,7 @@
             !empty($_POST['confirm_password']) &&
             !empty($_POST['user_phone']))
         {
+            session_start();
             include '../database/dbconnect.php';
             $fullname = $_POST['full_name'];
             $username = $_POST['username'];
@@ -26,7 +28,6 @@
             $query = mysql_query("INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
             if($query)
             {
-                session_start();
                 $_SESSION['user'] = $username;
                 if ($status == "customer") {
                     header("Location: ../order/order.php");

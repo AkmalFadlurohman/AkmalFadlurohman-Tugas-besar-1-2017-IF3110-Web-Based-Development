@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
             include '../database/dbconnect.php';
@@ -17,7 +18,6 @@
                 
                 if($user == $dbusername && $pass == $dbpassword)
                 {
-                    session_start();
                     $_SESSION['user'] = $user;
                     header("Location: ../order/order.php");
                 }

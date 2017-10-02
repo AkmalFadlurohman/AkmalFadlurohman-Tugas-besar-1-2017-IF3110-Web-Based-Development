@@ -4,7 +4,7 @@
             <p>"An ojek for anything you need"</p></br>
             </div>
             <div class="greeting">
-                <p>Hello, "Eisenhower!"</p>
-                <p>Logout</p>
+                <p>Hello, '.'"'.$_SESSION['user'].'"'.'</p>
+                <p><a href="../login/logout.php">Logout</a></p>
             </div>';
 ?>

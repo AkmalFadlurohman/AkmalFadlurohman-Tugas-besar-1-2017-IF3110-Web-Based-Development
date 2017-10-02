@@ -1,4 +1,6 @@
-<?php //if (!isset($_SESSION['user'])) die("<br /><br />You must be logged in to view this page");?>
+<?php
+    session_start();
+?>
 <html>
 <head>
     <title>U Wanna Call Me Beibh?</title>
@@ -24,7 +26,8 @@
             </div>
             <?php
                 include '../database/dbconnect.php';
-                $user = "eHower";
+                
+                $user = $_SESSION['user'];
                 $query=mysql_query("SELECT * FROM user WHERE username='".$user."'") or die(mysql_error());
     
                 $numrows=mysql_num_rows($query);
@@ -39,9 +42,9 @@
                         }
                         echo $row['email']."</br>";
                         echo $row['phone']."</br>";
-                        /*if (isset($row['pict'])) {
+                        if (isset($row['pict'])) {
                             echo "<script>document.getElementById('profile_pict').src = '../img/default_profile.jpeg'</script>";
-                        }*/
+                        }
                     }
                 }
                 mysql_close();
