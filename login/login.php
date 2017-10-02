@@ -17,7 +17,9 @@
                 
                 if($user == $dbusername && $pass == $dbpassword)
                 {
-                    header("Location: ../order/order.html");
+                    session_start();
+                    $_SESSION['user'] = $user;
+                    header("Location: ../order/order.php");
                 }
             } else {
                 include("login.html");

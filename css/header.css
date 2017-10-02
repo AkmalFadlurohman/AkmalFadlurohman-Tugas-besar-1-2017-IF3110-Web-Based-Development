@@ -1,0 +1,31 @@
+.header {
+    border-bottom-style: solid;
+    height: 10%;
+}
+.logo {
+    float: left;
+    height: 50px;
+}
+.logo h1 {
+    text-align: left;
+    margin: 0 ;
+}
+.logo p {
+    text-align: left;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+.greeting {
+    float: right;
+    font-size: 0.8em;
+}
+.greeting p {
+    text-align: right;
+    margin: 0 ;
+    margin-top: 10px;
+}
+.menu {
+    text-align: center;
+    background-color: rgb(65,62,119);
+    height: 20px;
+}

@@ -9,7 +9,7 @@
         {
             include '../database/dbconnect.php';
             $fullname = $_POST['full_name'];
-            $username = $_POST['user_name'];
+            $username = $_POST['username'];
             $email    = $_POST['user_email'];
             $password = $_POST['user_password'];
             $phone    = $_POST['user_phone'];
@@ -26,10 +26,12 @@
             $query = mysql_query("INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
             if($query)
             {
+                session_start();
+                $_SESSION['user'] = $username;
                 if ($status == "customer") {
-                    header("Location: ../order/order.html");
+                    header("Location: ../order/order.php");
                 } else {
-                    header("Location: ../profile_page/profile.html");
+                    header("Location: ../profile_page/profile.php");
                 }
             }
             mysql_close();

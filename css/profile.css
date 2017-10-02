@@ -1,0 +1,91 @@
+#profile_frame {
+    height: 550px;
+    width: 400px;
+}
+#profile_frame h1 {
+    text-align: left;
+    margin-top: 0;
+}
+.profile_subtitle {
+    height: 10%;
+}
+.profile_title {
+    float: left;
+}
+.profile_title h1 {
+    text-align: left;
+    margin: 0 ;
+}
+.edit_profile_button {
+    float: right;
+    margin-top: 0;
+    margin-right: 10 px;
+}
+.image_frame {
+    width: 100px;
+    height: 100px;
+    overflow: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image_frame img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+.myprofile {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#edit_profile_page {
+    height: 550px;
+    width: 400px;
+    overflow-y: scroll;
+}
+#edit_profile_page h1 {
+    text-align: left;
+    margin-top: 0;
+}
+#edit_profile_page input[type="text"] {
+    width: 180px;
+}
+.edit_profile_frame {
+    text-align: left;
+    overflow-y: scroll;
+    height: 415px;
+}
+.edit_image_frame {
+    float: left;
+    width: 100px;
+    height: 100px;
+    overflow: auto;
+    border-radius: 50%;
+}
+.edit_image_frame img {
+    height: 100%;
+    width: 100%;
+}
+.select_pict {
+    display: flex;
+    position: relative;
+    top: 35px;
+    left: 5px;
+}
+.browse_file {
+    display: flex;
+    position: absolute;
+    top: 37px;
+    left: 300px;
+}
+input.upload_file {
+    display: flex;
+    position: relative;
+    display: inline;
+    text-align: right;
+    left: 0px;
+    height: 17px;
+    width: 100px;
+}

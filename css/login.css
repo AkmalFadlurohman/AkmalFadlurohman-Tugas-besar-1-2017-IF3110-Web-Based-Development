@@ -19,6 +19,7 @@
     border : none;
     cursor : pointer;
     margin: 0 auto 15px;
+    color: rgb(92,88,138);
 }
 
 #login_frame input[type="submit"]:hover {
@@ -26,8 +27,8 @@
 }
 
 #sign_up_frame {
+    height: 550px;
 	width: 400px;
-	height: 550px;
 }
 
 #sign_up_frame input[type="submit"] {

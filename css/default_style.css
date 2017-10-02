@@ -4,8 +4,8 @@ body {
 }
 
 .frame {
-	border: 7px solid rgb(65,62,119);
-	border-radius: 25px;
+	border: 6px solid rgb(65,62,119);
+	border-radius: 10px;
 	background-color: rgb(92,88,138);
 	margin: 50px auto;
 }
@@ -13,12 +13,27 @@ body {
 .frame h1,h2 {
 	text-align: center;
 }
-
+.button {
+    background: rgb(65,62,119);
+    color: rgb(250, 250, 250);
+    border: 1px solid rgb(250, 250, 250);
+    border-radius: 20px;
+    text-shadow:none;
+    width: 60px;
+    height: 33px;
+}
+.button:hover {
+    background: rgb(191,216,255);
+    color: #fff;
+    border: 1px solid rgb(250, 250, 250);
+    border-radius: 20px;
+    text-shadow:none;
+   
+}
 input{
 	width: 90%;
 	margin: 1px auto 15px;
 }
-
 a:link, a:visited {
 	color: rgb(250,250,250);
 	text-decoration: none;
