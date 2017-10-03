@@ -1,11 +1,10 @@
 <?php
-    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
             include '../database/dbconnect.php';
-            $user = $_POST['user_name'];
-            $pass = $_POST['user_password'];
-            $query=mysql_query("SELECT * FROM user WHERE username='".$user."' AND password='".$pass."'") or die(mysql_error());
+            $username = $_POST['user_name'];
+            $password = $_POST['user_password'];
+            $query = mysql_query("SELECT * FROM user WHERE username='".$username."' AND password='".$password."'") or die(mysql_error());
             
             $numrows=mysql_num_rows($query);
             if($numrows!=0)
@@ -14,12 +13,12 @@
                 {
                     $dbusername=$row['username'];
                     $dbpassword=$row['password'];
+                    $user_id=$row['user_id'];
                 }
-                
-                if($user == $dbusername && $pass == $dbpassword)
+                //echo $user_id;
+                if($username == $dbusername && $password == $dbpassword)
                 {
-                    $_SESSION['user'] = $user;
-                    header("Location: ../order/order.php");
+                    header("Location: ../profile_page/profile.php?id=$user_id%26&username=$username");
                 }
             } else {
                 include("login.html");

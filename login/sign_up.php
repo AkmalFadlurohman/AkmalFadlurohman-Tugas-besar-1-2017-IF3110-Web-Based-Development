@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['full_name']) &&
             !empty($_POST['username']) &&
@@ -8,7 +7,6 @@
             !empty($_POST['confirm_password']) &&
             !empty($_POST['user_phone']))
         {
-            session_start();
             include '../database/dbconnect.php';
             $fullname = $_POST['full_name'];
             $username = $_POST['username'];
@@ -28,11 +26,13 @@
             $query = mysql_query("INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
             if($query)
             {
-                $_SESSION['user'] = $username;
+                $getUserID = mysql_query("SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
+                $row=mysql_fetch_assoc($getUserID);
+                $user_id=$row['id'];
                 if ($status == "customer") {
-                    header("Location: ../order/order.php");
+                    header("Location: ../order/order.php?id=?$user_id&username=$username");
                 } else {
-                    header("Location: ../profile_page/profile.php");
+                    header("Location: ../profile_page/profile.php?id=?$user_id%26&username=$username");
                 }
             }
             mysql_close();

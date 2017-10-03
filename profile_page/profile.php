@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    $username = $_GET['username'];
+    $user_id = $_GET['id'];
 ?>
 <html>
 <head>
@@ -11,14 +12,14 @@
 <body>
     <div class="frame" id="profile_frame">
         <div class="header">
-            <?php include '../template/header.php';?>
+            <?php include'../template/header.php';?>
         </div>
         <div class="menu">
-            <?php include '../template/menu.php';?>
+            <?php include'../template/menu.php';?>
         </div>
         <div class="profile_subtitle">
             <div class="profile_title"><h1>My Profile</h1></div>
-            <div class="edit_profile_button"><a href="edit_profile.php">✎</a></div>
+            <div class="edit_profile_button"><a href=<?php echo 'edit_profile.php?id='.$user_id.'%26&username='.$username; ?>>✎</a></div>
         </div>
         <div class="myprofile">
             <div class="image_frame">
@@ -27,8 +28,7 @@
             <?php
                 include '../database/dbconnect.php';
                 
-                $user = $_SESSION['user'];
-                $query=mysql_query("SELECT * FROM user WHERE username='".$user."'") or die(mysql_error());
+                $query=mysql_query("SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
     
                 $numrows=mysql_num_rows($query);
                 if($numrows!=0)
@@ -43,7 +43,7 @@
                         echo $row['email']."</br>";
                         echo $row['phone']."</br>";
                         if (isset($row['pict'])) {
-                            echo "<script>document.getElementById('profile_pict').src = '../img/default_profile.jpeg'</script>";
+                            echo "<script>document.getElementById('profile_pict').src ='getProfilePict.php?username=".$username."'</script>";
                         }
                     }
                 }
