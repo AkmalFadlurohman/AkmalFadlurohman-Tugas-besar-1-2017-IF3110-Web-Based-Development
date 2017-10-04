@@ -28,11 +28,12 @@
             {
                 $getUserID = mysqli_query($con,"SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
                 $row=mysqli_fetch_assoc($getUserID);
-                $user_id=$row['id'];
+                $user_id=$row['user_id'];
+                header("Location: ../profile_page/profile.php?id=?$user_id");
                 if ($status == "customer") {
-                    header("Location: ../order/order.php?id=?$user_id&username=$username");
+                    header("Location: ../order/order.php?id=?$user_id");
                 } else {
-                    header("Location: ../profile_page/profile.php?id=?$user_id%26&username=$username");
+                    header("Location: ../order/order.php?id=?$user_id");
                 }
             }
             mysqli_close($con);

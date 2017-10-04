@@ -15,10 +15,9 @@
                     $dbpassword=$row['password'];
                     $user_id=$row['user_id'];
                 }
-                //echo $user_id;
                 if($username == $dbusername && $password == $dbpassword)
                 {
-                    header("Location: ../profile_page/profile.php?id=$user_id%26&username=$username");
+                    header("Location: ../profile_page/profile.php?id=$user_id");
                 }
             } else {
                 include("login.html");

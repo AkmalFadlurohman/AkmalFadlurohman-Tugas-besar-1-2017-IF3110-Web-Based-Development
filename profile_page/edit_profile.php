@@ -9,7 +9,20 @@
 <body>
     <div class="frame" id="edit_profile_page">
         <div class="header">
-            <?php include '../template/header.php';?>
+            <?php
+                $user_id = $_GET['id'];
+                include '../database/dbconnect.php';
+                
+                $query=mysqli_query($con,"SELECT * FROM user WHERE user_id='".$user_id."'") or die(mysqli_error());
+    
+                if(mysqli_num_rows($query)!=0)
+                {
+                    $row=mysqli_fetch_assoc($query);
+                    $username = $row['username'];
+                    include("../template/header.php");
+                }
+                mysqli_close($con);
+            ?>
         </div>
         <div class="menu">
             <?php include '../template/menu.php';?>
@@ -58,6 +71,7 @@
                     </div>
                 </div>
                 <div>
+                    <input id="hidden_userid" name="hidden_userid" type="text" style="display:none;">
                     <button class="button" style="float: left;"><a href="profile.php">BACK</a></button>
                     <input type="submit" value="SAVE" style="float: right;" class="button">
                 </div>
@@ -65,25 +79,12 @@
         </div>
     </div>
     <?php
-        include '../database/dbconnect.php';
-        
-        $username = $_GET['username'];
-        $user_id = $_GET['id'];
-        $query=mysqli_query($con,"SELECT * FROM user WHERE username='".$username."'") or die(mysqli_error());
-    
-        $numrows=mysqli_num_rows($query);
-        if($numrows!=0)
-        {
-            while($row=mysqli_fetch_assoc($query))
-            {
-                echo "<script>document.getElementById('current_name').value = '".$row['name']."'</script>";
-                echo "<script>document.getElementById('current_phone').value = '".$row['phone']."'</script>";
-                if (isset($row['pict'])) {
-                    echo "<script>document.getElementById('edit_profile_pict').src ='getProfilePict.php?username=".$username."'</script>";
-                }
-            }
+        echo "<script>document.getElementById('current_name').value = '".$row['name']."'</script>";
+        echo "<script>document.getElementById('current_phone').value = '".$row['phone']."'</script>";
+        if (isset($row['pict'])) {
+            echo "<script>document.getElementById('edit_profile_pict').src ='getProfilePict.php?id=".$user_id."'</script>";
         }
-        mysqli_close($con);
+        echo "<script>document.getElementById('hidden_userid').value =".$user_id."</script>";
     ?>
     <script>
         function showFileName(inputFile) {
