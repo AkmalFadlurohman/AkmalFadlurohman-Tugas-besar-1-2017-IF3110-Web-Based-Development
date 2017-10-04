@@ -2,8 +2,8 @@
     session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include '../database/dbconnect.php';
-        if (isset($_FILES) && ($_FILES['profile_pictfile']['size'] > 0) && !empty($_POST['edit_name']) && !empty($_POST['edit_phone'])) {
-            $username = $_SESSION['user'];
+        if (isset($_FILES) && ($_FILES['profile_pictfile']['size'] > 0) && !empty($_POST['edit_name']) && !empty($_POST['edit_phone']) && !empty($_POST['hidden_userid'])) {
+            $user_id = $_POST['hidden_userid'];
             $new_name = $_POST['edit_name'];
             $new_phone = $_POST['edit_phone'];
             if(isset($_POST['is_driver']))
@@ -42,11 +42,11 @@
                 {
                     $fileName = addslashes($fileName);
                 }
-                $query=mysqli_query($con,"UPDATE user set name='".$new_name."',phone='".$new_phone."',status='".$status."',pict='".$content."'WHERE username='".$username."'") or die(mysqli_error());
+                $query=mysqli_query($con,"UPDATE user set name='".$new_name."',phone='".$new_phone."',status='".$status."',pict='".$content."'WHERE user_id='".$user_id."'") or die(mysqli_error());
             }
             if($query)
             {
-                header("Location: profile.php?id=$user_id%26&username=$username");
+                header("Location: profile.php?id=$user_id");
             }
             mysqli_close($con);
         }

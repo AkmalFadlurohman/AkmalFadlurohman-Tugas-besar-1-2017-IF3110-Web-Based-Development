@@ -6,22 +6,30 @@
     text-align: left;
     margin-top: 0;
 }
-.profile_subtitle {
-    height: 10%;
+.profile_container {
+    height: 70%;
+}
+.profile_header {
+    height: 15%;
 }
 .profile_title {
     float: left;
 }
 .profile_title h1 {
     text-align: left;
-    margin: 0 ;
+    margin: 0;
 }
 .edit_profile_button {
     float: right;
     margin-top: 0;
     margin-right: 10 px;
 }
-.image_frame {
+.myprofile {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profilepict_frame {
     width: 100px;
     height: 100px;
     overflow: auto;
@@ -29,21 +37,18 @@
     margin-left: auto;
     margin-right: auto;
 }
-.image_frame img {
+.profilepict_frame img {
     display: inline;
     margin: 0 auto;
     height: 100%;
     width: 100%;
 }
-.myprofile {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.profile_info {
+    height: 100px;
 }
 #edit_profile_page {
     height: 550px;
     width: 400px;
-    overflow-y: scroll;
 }
 #edit_profile_page h1 {
     text-align: left;
