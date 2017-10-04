@@ -46,8 +46,8 @@ a:hover {
 	opacity: 0.6%;
 }
 
-/*.menu {
+.menu {
     border: 0.5px solid black; 
-    width: 200px; 
+    width: 199px; 
     float: left;
-}*/
+}

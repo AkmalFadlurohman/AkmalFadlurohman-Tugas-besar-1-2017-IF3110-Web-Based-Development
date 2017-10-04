@@ -90,3 +90,6 @@ input.upload_file {
     height: 17px;
     width: 100px;
 }
+#profile_link {
+    background-color: #465d43;
+}
