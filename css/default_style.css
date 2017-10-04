@@ -1,5 +1,8 @@
 .frame {
+    width: 600px;
 	margin: 50px auto;
+    border-left: 0.5px solid black; 
+    border-right: 0.5px solid black;
 }
 
 .frame h1,h2 {
@@ -40,5 +43,11 @@ a:link, a:visited {
 }
 
 a:hover {
-	opacity: 10%;
+	opacity: 0.6%;
 }
+
+/*.menu {
+    border: 0.5px solid black; 
+    width: 200px; 
+    float: left;
+}*/

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
-    <div class="frame" id="profile_frame">
+    <div class="frame">
         <div class="header">
             <?php
                 $user_id = $_GET['id'];
