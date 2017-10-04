@@ -46,7 +46,7 @@
             }
             if($query)
             {
-                header("Location: profile.php");
+                header("Location: profile.php?id=$user_id%26&username=$username");
             }
             mysqli_close($con);
         }
