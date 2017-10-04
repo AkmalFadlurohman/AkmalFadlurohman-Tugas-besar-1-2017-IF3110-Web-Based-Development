@@ -7,15 +7,26 @@
 }
 
 .button {
-    background: #82d800;
     color: black;
     border: 2px solid black;
     border-radius: 6px;
     text-shadow:none;
 }
 
-.button:hover {
+.green {
+    background: #82d800;
+}
+
+.green:hover {
     background: #9dff08;
+}
+
+.red {
+    background: #d50027;
+}
+
+.red:hover {
+    background: #ff264e;
 }
 
 input{
