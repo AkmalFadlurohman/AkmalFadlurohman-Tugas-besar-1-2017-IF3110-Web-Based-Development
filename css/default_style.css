@@ -35,10 +35,10 @@ input{
 }
 
 a:link, a:visited {
-	color: rgb(250,250,250);
-	text-decoration: none;
+	color: black;
+	text-decoration: underline;
 }
 
 a:hover {
-	color: rgb(167,180,4);
+	opacity: 10%;
 }
