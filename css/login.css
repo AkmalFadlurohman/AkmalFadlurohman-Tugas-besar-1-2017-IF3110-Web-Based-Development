@@ -4,6 +4,7 @@
     border: 10px solid #02702c;
     border-radius: 70px;
     background-color:  #8bbd3c;
+    color: #02702c;
 }
 
 .frame > div {
@@ -25,17 +26,7 @@
     color: rgb(92,88,138);
 }
 
-.frame input[type="submit"]:hover {
-    opacity: 0.6;
-}
-
-.frame {
-    height: 550px;
-	width: 400px;
-    border-radius: 25px;
-}
-
-.frame input[type="submit"] {
+/*.frame input[type="submit"] {
     border-radius: 40px;
     background-color: rgb(191,216,255);
     padding: 5px 3px;
@@ -44,15 +35,8 @@
     border : none;
     cursor : pointer;
     margin: 0 auto 15px;
-}
+}*/
 
 .frame input[type="submit"]:hover {
     opacity : 0.6;
-}
-
-.frame > div {
-	left: 10%;
-	width: 80%;
-	height: auto;
-	position: relative;
 }
