@@ -23,11 +23,11 @@
                 $status = 'customer';
             }
             
-            $query = mysql_query("INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
+            $query = mysqli_query($con,"INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
             if($query)
             {
-                $getUserID = mysql_query("SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
-                $row=mysql_fetch_assoc($getUserID);
+                $getUserID = mysqli_query($con,"SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
+                $row=mysqli_fetch_assoc($getUserID);
                 $user_id=$row['id'];
                 if ($status == "customer") {
                     header("Location: ../order/order.php?id=?$user_id&username=$username");
@@ -35,7 +35,7 @@
                     header("Location: ../profile_page/profile.php?id=?$user_id%26&username=$username");
                 }
             }
-            mysql_close();
+            mysqli_close($con);
         }
         else {
             include("sign_up.html");
@@ -52,18 +52,18 @@
             include '../database/dbconnect.php';
             
             if ($key == "username") {
-                $query = mysql_query("SELECT * FROM user WHERE username='".$value."'") or die(mysql_error());
-                $numrows=mysql_num_rows($query);
+                $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$value."'") or die(mysql_error());
+                $numrows=mysqli_num_rows($query);
             } else if ($key == "user_email") {
-                $query = mysql_query("SELECT * FROM user WHERE email='".$value."'") or die(mysql_error());
-                $numrows=mysql_num_rows($query);
+                $query = mysqli_query($con,"SELECT * FROM user WHERE email='".$value."'") or die(mysql_error());
+                $numrows=mysqli_num_rows($query);
             }
             if ($numrows != 0) {
                 echo " X";
             } else {
                 echo " Ok";
             }
-            mysql_close();
+            mysqli_close($con);
         }
     }
 ?>

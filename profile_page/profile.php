@@ -28,12 +28,12 @@
             <?php
                 include '../database/dbconnect.php';
                 
-                $query=mysql_query("SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
+                $query=mysqli_query($con,"SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
     
-                $numrows=mysql_num_rows($query);
+                $numrows=mysqli_num_rows($query);
                 if($numrows!=0)
                 {
-                    while($row=mysql_fetch_assoc($query))
+                    while($row=mysqli_fetch_assoc($query))
                     {
                         echo "</br><strong>".$row['username']."</strong></br>";
                         echo $row['name']."</br>";
@@ -47,7 +47,7 @@
                         }
                     }
                 }
-                mysql_close();
+                mysqli_close($con);
             ?>
         </div>
     </div>

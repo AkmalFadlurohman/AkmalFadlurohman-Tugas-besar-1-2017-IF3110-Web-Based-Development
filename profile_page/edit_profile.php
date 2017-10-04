@@ -69,12 +69,12 @@
         
         $username = $_GET['username'];
         $user_id = $_GET['id'];
-        $query=mysql_query("SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
+        $query=mysqli_query($con,"SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
     
-        $numrows=mysql_num_rows($query);
+        $numrows=mysqli_num_rows($query);
         if($numrows!=0)
         {
-            while($row=mysql_fetch_assoc($query))
+            while($row=mysqli_fetch_assoc($query))
             {
                 echo "<script>document.getElementById('current_name').value = '".$row['name']."'</script>";
                 echo "<script>document.getElementById('current_phone').value = '".$row['phone']."'</script>";
@@ -83,7 +83,7 @@
                 }
             }
         }
-        mysql_close();
+        mysqli_close($con);
     ?>
     <script>
         function showFileName(inputFile) {

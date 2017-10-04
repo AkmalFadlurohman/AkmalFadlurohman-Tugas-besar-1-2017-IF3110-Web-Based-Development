@@ -4,12 +4,12 @@
             include '../database/dbconnect.php';
             $username = $_POST['user_name'];
             $password = $_POST['user_password'];
-            $query = mysql_query("SELECT * FROM user WHERE username='".$username."' AND password='".$password."'") or die(mysql_error());
+            $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$username."' AND password='".$password."'") or die(mysql_error());
             
-            $numrows=mysql_num_rows($query);
+            $numrows=mysqli_num_rows($query);
             if($numrows!=0)
             {
-                while($row=mysql_fetch_assoc($query))
+                while($row=mysqli_fetch_assoc($query))
                 {
                     $dbusername=$row['username'];
                     $dbpassword=$row['password'];
@@ -27,7 +27,7 @@
                 </script>";
                 header("Location: login.html");
             }
-            mysql_close();
+            mysqli_close($con);
         }
     }
 ?>

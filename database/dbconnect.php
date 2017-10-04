@@ -3,6 +3,6 @@
     define('dbuser', 'root');
     define('dbpass', '');
     define('dbname', 'PR_Ojek');
-    mysql_connect(dbserver, dbuser, dbpass) or die(mysql_error());
-    mysql_select_db(dbname) or die('Could not select database '.mysql_error());
+    $con=mysqli_connect(dbserver, dbuser, dbpass) or die(mysql_error());
+    mysqli_select_db($con,dbname) or die('Could not select database '.mysql_error());
 ?>
