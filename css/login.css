@@ -14,29 +14,8 @@
 	position: relative;
 }
 
-.frame input[type="submit"] {
-    border-radius: 40px;
-    background-color: rgb(191,216,255);
-    padding: 5px 3px;
-    display: block;
-    width: 30%;
-    border : none;
-    cursor : pointer;
-    margin: 0 auto 15px;
-    color: rgb(92,88,138);
-}
-
-/*.frame input[type="submit"] {
-    border-radius: 40px;
-    background-color: rgb(191,216,255);
-    padding: 5px 3px;
-    display: block;
-    width: 30%;
-    border : none;
-    cursor : pointer;
-    margin: 0 auto 15px;
-}*/
-
-.frame input[type="submit"]:hover {
-    opacity : 0.6;
+.register {
+    width: 80px;
+    height: 30px;
+    float: right;
 }
