@@ -1,12 +1,4 @@
-body {
-	background-color: rgb(210,210,210);
-	color: rgb(250,250,250);
-}
-
 .frame {
-	border: 6px solid rgb(65,62,119);
-	border-radius: 10px;
-	background-color: rgb(92,88,138);
 	margin: 50px auto;
 }
 
