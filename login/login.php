@@ -4,7 +4,7 @@
             include '../database/dbconnect.php';
             $username = $_POST['user_name'];
             $password = $_POST['user_password'];
-            $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$username."' AND password='".$password."'") or die(mysql_error());
+            $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$username."' AND password='".$password."'") or die(mysqli_error());
             
             $numrows=mysqli_num_rows($query);
             if($numrows!=0)

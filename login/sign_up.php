@@ -23,7 +23,7 @@
                 $status = 'customer';
             }
             
-            $query = mysqli_query($con,"INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysql_error());
+            $query = mysqli_query($con,"INSERT INTO user (name,email,phone,username,password,status,pict) VALUES ('$fullname', '$email', '$phone', '$username', '$password', '$status',DEFAULT)") or die(mysqli_error());
             if($query)
             {
                 $getUserID = mysqli_query($con,"SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
@@ -52,10 +52,10 @@
             include '../database/dbconnect.php';
             
             if ($key == "username") {
-                $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$value."'") or die(mysql_error());
+                $query = mysqli_query($con,"SELECT * FROM user WHERE username='".$value."'") or die(mysqli_error());
                 $numrows=mysqli_num_rows($query);
             } else if ($key == "user_email") {
-                $query = mysqli_query($con,"SELECT * FROM user WHERE email='".$value."'") or die(mysql_error());
+                $query = mysqli_query($con,"SELECT * FROM user WHERE email='".$value."'") or die(mysqli_error());
                 $numrows=mysqli_num_rows($query);
             }
             if ($numrows != 0) {

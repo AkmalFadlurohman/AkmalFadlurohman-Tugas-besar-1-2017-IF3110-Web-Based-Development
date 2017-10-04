@@ -1,7 +1,7 @@
 <?php
     $user = $_GET['username'];
     include '../database/dbconnect.php';
-    $query=mysqli_query($con,"SELECT pict FROM user WHERE username='".$user."'") or die(mysql_error());
+    $query=mysqli_query($con,"SELECT pict FROM user WHERE username='".$user."'") or die(mysqli_error());
     $row=mysqli_fetch_assoc($query);
     mysqli_close($con);
     if (isset($row['pict'])) {

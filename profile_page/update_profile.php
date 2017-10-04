@@ -42,13 +42,13 @@
                 {
                     $fileName = addslashes($fileName);
                 }
-                $query=mysql_query("UPDATE user set name='".$new_name."',phone='".$new_phone."',status='".$status."',pict='".$content."'WHERE username='".$username."'") or die(mysql_error());
+                $query=mysqli_query($con,"UPDATE user set name='".$new_name."',phone='".$new_phone."',status='".$status."',pict='".$content."'WHERE username='".$username."'") or die(mysqli_error());
             }
             if($query)
             {
                 header("Location: profile.php");
             }
-            mysql_close();
+            mysqli_close($con);
         }
     }
 ?>

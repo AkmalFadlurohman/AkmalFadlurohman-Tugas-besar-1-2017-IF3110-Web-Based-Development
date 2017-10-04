@@ -28,7 +28,7 @@
             <?php
                 include '../database/dbconnect.php';
                 
-                $query=mysqli_query($con,"SELECT * FROM user WHERE username='".$username."'") or die(mysql_error());
+                $query=mysqli_query($con,"SELECT * FROM user WHERE username='".$username."'") or die(mysqli_error());
     
                 $numrows=mysqli_num_rows($query);
                 if($numrows!=0)
