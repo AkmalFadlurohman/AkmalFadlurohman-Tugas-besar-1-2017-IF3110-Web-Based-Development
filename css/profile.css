@@ -1,31 +1,29 @@
-#profile_frame h1 {
-    text-align: left;
-    margin-top: 0;
-}
 .profile_container {
-    height: 70%;
+    margin-top: 10%;
+    height: 50%;
 }
-.profile_header {
+.subheader {
     height: 15%;
 }
-.profile_title {
+.title {
     float: left;
 }
-.profile_title h1 {
+.title h1 {
     text-align: left;
     margin: 0;
 }
 .edit_profile_button {
     float: right;
-    margin-top: 0;
-    margin-right: 10 px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
-.myprofile {
+.profile_info_container {
     text-align: center;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
 }
-.profilepict_frame {
+.profile_pict_frame {
     width: 100px;
     height: 100px;
     overflow: auto;
@@ -33,62 +31,83 @@
     margin-left: auto;
     margin-right: auto;
 }
-.profilepict_frame img {
+.profile_pict_frame img {
     display: inline;
     margin: 0 auto;
     height: 100%;
     width: 100%;
 }
-.profile_info {
+.profile_data_container {
     height: 100px;
 }
-#edit_profile_page {
-    height: 550px;
-    width: 400px;
+.edit_prefloc_button {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
-#edit_profile_page h1 {
-    text-align: left;
-    margin-top: 0;
-}
-#edit_profile_page input[type="text"] {
-    width: 180px;
-}
-.edit_profile_frame {
-    text-align: left;
+.edit_profile_container {
+    margin-top: 10%;
     overflow-y: scroll;
-    height: 415px;
+    height: 72%;
 }
-.edit_image_frame {
-    float: left;
-    width: 100px;
+.change_profilepict {
+    display: flex;
+    height: 25%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.current_pict_frame {
+    width: 170px;
     height: 100px;
     overflow: auto;
     border-radius: 50%;
+    margin-left: 5%;
 }
-.edit_image_frame img {
+.current_pict_frame img {
+    display: inline;
+    margin: 0 auto;
     height: 100%;
     width: 100%;
 }
-.select_pict {
-    display: flex;
-    position: relative;
-    top: 35px;
-    left: 5px;
+.pict_name_field {
+    margin-top: 35px;
+    margin-left: 5%;
 }
-.browse_file {
-    display: flex;
-    position: absolute;
-    top: 37px;
-    left: 300px;
+.pict_name_field input {
+    width: 100%;
 }
-input.upload_file {
+.pict_picker_frame {
+    margin-top: 37px;
+}
+.pict_picker_frame input {
+    border: 0px;
+}
+.current_profile {
+    height: 25%;
+    width: 100%;
     display: flex;
-    position: relative;
-    display: inline;
-    text-align: right;
-    left: 0px;
-    height: 17px;
-    width: 100px;
+}
+.form_name {
+    height: 100px;
+    width: 115px;
+    margin-left: 5%;
+    margin-right: 5%
+}
+.form_field {
+    height: 100px;
+    width: 250px;
+}
+.form_field input {
+    width: 100%;
+}
+.back {
+    width: 39px;
+    text-align: center;
+    padding: 3px;
+    font-size: 0.8em;
+}
+.save {
+    width: 50px;
 }
 #profile_link {
     background-color: #465d43;
