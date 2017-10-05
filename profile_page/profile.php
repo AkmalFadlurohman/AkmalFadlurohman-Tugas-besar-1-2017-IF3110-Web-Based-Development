@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
-    <div class="frame" id="profile_frame">
+    <div class="frame">
         <div class="header">
             <?php
                 $user_id = $_GET['id'];
@@ -26,7 +26,7 @@
                 mysqli_close($con);
             ?>
         </div>
-        <div class="menu">
+        <div style="background-color: white; max-width: 600px; margin-left: auto; margin-right: auto">
             <?php include'../template/menu.php';?>
         </div>
         <div class="profile_container">

@@ -1,7 +1,3 @@
-#profile_frame {
-    height: 550px;
-    width: 400px;
-}
 #profile_frame h1 {
     text-align: left;
     margin-top: 0;
@@ -93,4 +89,7 @@ input.upload_file {
     left: 0px;
     height: 17px;
     width: 100px;
+}
+#profile_link {
+    background-color: #465d43;
 }

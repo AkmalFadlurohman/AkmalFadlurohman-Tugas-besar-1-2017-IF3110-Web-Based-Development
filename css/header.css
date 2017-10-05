@@ -1,6 +1,6 @@
 .header {
     border-bottom-style: solid;
-    height: 10%;
+    height: 55px;
 }
 .logo {
     float: left;
@@ -24,8 +24,8 @@
     margin: 0 ;
     margin-top: 10px;
 }
-.menu {
+/*.menu {
     text-align: center;
     background-color: rgb(65,62,119);
     height: 20px;
-}
+}*/
