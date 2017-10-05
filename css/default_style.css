@@ -1,6 +1,6 @@
 .frame {
     width: 360px;
-    height: 450px;
+    height: 550px;
 	margin: 50px auto;
     padding-right: 20px;
     padding-left: 20px;
@@ -12,6 +12,7 @@
 }
 
 .frame h1,h2 {
+	text-align: center;
     font-family: franklin gothic;
 }
 
@@ -38,10 +39,9 @@
     background: #ff264e;
 }
 
-input {
-    height: 70%;
-	width: 100%;
-    border: 1px solid black;
+input{
+	width: 90%;
+	margin: 1px auto 15px;
 }
 
 a:link, a:visited {
@@ -57,9 +57,6 @@ a:hover {
     border: 0.5px solid black; 
     width: 119px;
     float: left;
-<<<<<<< HEAD
-}
-=======
     text-align: center;
     font-family: calibri;
 }
@@ -75,4 +72,3 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
->>>>>>> e4cb031f91cc3a69608d1c077166b3a49967d20f
