@@ -60,9 +60,9 @@
                 $numrows=mysqli_num_rows($query);
             }
             if ($numrows != 0) {
-                echo " X";
+                echo "☓";
             } else {
-                echo " Ok";
+                echo "✓";
             }
             mysqli_close($con);
         }
