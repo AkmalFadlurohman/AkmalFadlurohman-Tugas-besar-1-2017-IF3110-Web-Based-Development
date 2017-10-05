@@ -26,7 +26,7 @@
                 mysqli_close($con);
             ?>
         </div>
-        <div style="background-color: white; max-width: 600px; margin-left: auto; margin-right: auto">
+        <div class="menu_container">
             <?php include'../template/menu.php';?>
         </div>
         <div class="profile_container">
