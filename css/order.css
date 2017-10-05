@@ -1,3 +1,22 @@
+.frame > h1 {
+	text-align: left;
+}
+
+.submenu {
+	width: 100px;
+	height: 40px;
+	float: left;
+	border: 0.5px solid black; 
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.submenu_container {
+	width: 360px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
 #order_link {
     background-color: #465d43;
 }
