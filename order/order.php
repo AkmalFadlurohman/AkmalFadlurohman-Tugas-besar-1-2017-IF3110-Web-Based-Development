@@ -2,30 +2,28 @@
 <html>
 <head>
 	<title>U Wanna Call Me Beibh?</title>
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
 	<link rel="stylesheet" type="text/css" href="../css/order.css">
-	<script type="text/javascript">
-		function setURL(url) {
-			document.getElementById('content_iframe').src = url;
-		}
-	</script>
+	<link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
-<<<<<<< HEAD
 	<div class="frame">
-		<p>Order</p>
-	<div class="frame" id="container">
-		<div class="button" id="first">
-			<input type="button" name="select_location" onclick="setURL('select_location.html')" >
+		<div class="header">
+			<?php
+                $user_id = $_GET['id'];
+                include '../database/dbconnect.php';
+                
+                $query=mysqli_query($con,"SELECT * FROM user WHERE user_id='".$user_id."'") or die(mysqli_error());
+                
+                if(mysqli_num_rows($query)!=0)
+                {
+                    $row=mysqli_fetch_assoc($query);
+                    $username = $row['username'];
+                    include("../template/header.php");
+                }
+                mysqli_close($con);
+            ?>
 		</div>
-		<div class="button" id="second">
-			<input type="button" name="select_driver" onclick="setURL('select_driver.html')">
-		</div>
-		<div class="button" id="third">
-			<input type="button" name="complete_order" onclick="setURL('complete_order.html')">
-		</div>
-
-		<iframe id="content_iframe" src=""/>
 	</div>
 </body>
 </html>
