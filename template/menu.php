@@ -1,18 +1,18 @@
 <?php
     echo '
-    <a href="order/order.php" name="order_link">
+    <a href="../order/order.php" name="order_link">
 	<div class="menu" id="order_link">
-		<h3>Order</h3>
+		<h3>ORDER</h3>
 	</div>
 	</a>
-	<a href="history/history.php" name="history_link">
+	<a href="../history/history.php" name="history_link">
 	<div class="menu" id="history_link">
-		<h3>History</h3>
+		<h3>HISTORY</h3>
 	</div>
 	</a>
-	<a href="profile/profile.php" name="profile_link">
+	<a href="../profile/profile.php" name="profile_link">
 	<div class="menu" id="profile_link">
-		<h3>My Profile</h3>
+		<h3>MY PROFILE</h3>
 	</div>
 	</a>
     ';
