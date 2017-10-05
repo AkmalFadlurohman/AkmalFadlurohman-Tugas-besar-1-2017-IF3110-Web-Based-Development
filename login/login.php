@@ -17,7 +17,7 @@
                 }
                 if($username == $dbusername && $password == $dbpassword)
                 {
-                    header("Location: ../profile_page/profile.php?id=$user_id");
+                    header("Location: ../profile/profile.php?id=$user_id");
                 }
             } else {
                 include("login.html");
