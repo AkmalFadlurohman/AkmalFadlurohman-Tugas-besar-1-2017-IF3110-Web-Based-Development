@@ -6,13 +6,14 @@
         <link rel="stylesheet" type="text/css" href="../css/login.css">
     </head>
     <body>
-        <div id="login_frame" class="frame">
-            <h2>Welcome to OneHundred<img src="../img/logo.png" style="width: 70px;height: 50px;float: right"></h2>
-            <p style="text-align: center">"An ojek for anything you need"</p>
-            <br/><br/>
-            <h2>--- Login ---</h2>
-            <p id="error_credential" style="text-align: center;"></p>
+        <div class="frame">
+            <div class="login_header">
+                <div class="horizontal_line"></div>
+                <h1>LOGIN</h1>
+                <div class="horizontal_line"></div>
+            </div>
             <div>
+                <p id="error_credential" style="text-align: center;"></p>
                 <form name="login" method="POST" action="login.php" onsubmit="return validate();">
                     Username
                     <input type="text" name="user_name"><br/>

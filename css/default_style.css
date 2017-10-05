@@ -29,8 +29,8 @@
     background: #ff264e;
 }
 
-input{
-	width: 90%;
+input {
+	width: 75%;
 	margin: 1px auto 15px;
 }
 
@@ -40,5 +40,5 @@ a:link, a:visited {
 }
 
 a:hover {
-    opacity: 0.5;
+	opacity: 0.5;
 }
