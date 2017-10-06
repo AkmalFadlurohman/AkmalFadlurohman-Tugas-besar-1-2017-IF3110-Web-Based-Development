@@ -1,7 +1,11 @@
 .history_container {
     margin-top: 10%;
-    height: 50%;
+    height: 79%;
     border: 1px solid red;
+}
+
+.history_container .subheader {
+	height: 10%;
 }
 
 .history_container > * {
@@ -34,5 +38,5 @@
 }
 
 .history_menu > h3 {
-	margin: 0;
+	margin: 5px 1px;
 }
