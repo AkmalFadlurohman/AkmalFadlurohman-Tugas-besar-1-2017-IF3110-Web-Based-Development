@@ -32,9 +32,9 @@
         </div>
         <div class="add_loc_frame">
             <h2> Add New Location</h2>
-            <form name="add_location" action="">
+            <form name="add_location" action="updateLocation.php" method="POST">
                 <input type="text" name="new_location">
-                <input type="text" name="hidden_userid" style="display: none;">
+                <input type="text" id="hidden_userid" name="hidden_userid" style="display: none;">
                 <input type="submit" value="ADD" class="button green add">
             </form>
         </div>
