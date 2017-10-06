@@ -20,7 +20,6 @@
                     $username = $row['username'];
                     include("../template/header.php");
                 }
-                mysqli_close($con);
             ?>
         </div>
         <div class="menu_container">
@@ -37,15 +36,15 @@
                 </div>
                 <div class="profile_data_container">
                     <?php
-                        echo "</br><strong>".$row['username']."</strong></br>";
-                        echo $row['name']."</br>";
+                        echo "</br><p><strong>".$row['username']."</strong></p>";
+                        echo "<p>".$row['name']."</p>";
                         if ($row['status'] == "driver") {
-                            echo "Driver | Rating (xxx Votes)</br>";
+                            echo "<p>Driver | <span id='driver_rating'>Rating (xxx Votes)</span></p>";
                         } else {
-                            echo "No-Driver</br>";
+                            echo "<p>Non-Driver</p>";
                         }
-                        echo $row['email']."</br>";
-                        echo $row['phone']."</br>";
+                        echo "<p>".$row['email']."</p>";
+                        echo "<p>".$row['phone']."</p>";
                         if (isset($row['pict'])) {
                             echo "<script>document.getElementById('profile_pict').src ='getProfilePict.php?id=".$user_id."'</script>";
                         }
@@ -53,10 +52,37 @@
                 </div>
             </div>
         </div>
-        <div class="prefloc_container">
+        <div id="display_prefloc" class="prefloc_container">
             <div class="subheader">
                 <div class="title"><h1>Preferred Locations</h1></div>
                 <div class="edit_prefloc_button"><a href=<?php echo 'edit_location.php?id='.$user_id; ?>>✎</a></div>
+            </div>
+            <div class="prefloc_list">
+                <?php
+                    if ($row['status'] != "driver") {
+                        echo '<script>document.getElementById("display_prefloc").style.display = "none";</script>';
+                    }
+                    $query=mysqli_query($con,"SELECT pref_loc FROM driver_prefloc WHERE driver_id='".$user_id."'") or die(mysqli_error());
+                    $numrows = mysqli_num_rows($query);
+                    if($numrows !=0)
+                    {
+                        $i = 1;
+                        $buffer = '<ul>';
+                        while ($row=mysqli_fetch_assoc($query)) {
+                            if ($i != $numrows) {
+                                $buffer .= '<li>►'.$row['pref_loc'].'</li><ul>';
+                                $i++;
+                            } else {
+                                $buffer .= '<li>►'.$row['pref_loc'].'</li>';
+                            }
+                        }
+                        for ($i = 0;$i <= $row; $i++) {
+                            $buffer .= '</ul>';
+                        }
+                        echo $buffer;
+                    }
+                    mysqli_close($con);
+                ?>
             </div>
         </div>
     </div>

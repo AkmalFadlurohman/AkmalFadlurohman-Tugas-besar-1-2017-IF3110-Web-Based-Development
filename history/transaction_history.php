@@ -21,7 +21,6 @@
                     $username = $row['username'];
                     include("../template/header.php");
                 }
-                mysqli_close($con);
             ?>
 		</div>
 		<div class="menu_container">
@@ -52,51 +51,33 @@
 					</colgroup>
 
 					<tbody>
-		    			<tr>
-		    				<td>
-	               				<img class="history_pict" src="../img/default_profile.jpeg">
-	            			</td>
-		    				<td class="history_column">
-		    					<p class="history_date">tanggal</p>
-		    					<p class="history_username">Username</p>
-		    					<p class="history_loc">asal - tujuan</p>
-		    					<p class="history_rating">rating</p>
-		    					<p class="history_comment">You commented:</p>
-		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		    					</p>
-		    				</td>
-		    			</tr>
-		    			<tr>
-		    				<td>
-	               				<img class="history_pict" src="../img/default_profile.jpeg">
-	            			</td>
-		    				<td class="history_column">
-		    					<p class="history_date">tanggal</p>
-		    					<p class="history_username">Username</p>
-		    					<p class="history_loc">asal - tujuan</p>
-		    					<p class="history_rating">rating</p>
-		    					<p class="history_comment">You commented:</p>
-		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		    					</p>
-		    				</td>
-		    			</tr>
-		    			<tr>
-		    				<td>
-	               				<img class="history_pict" src="../img/default_profile.jpeg">
-	            			</td>
-		    				<td class="history_column">
-		    					<p class="history_date">tanggal</p>
-		    					<p class="history_username">Username</p>
-		    					<p class="history_loc">asal - tujuan</p>
-		    					<p class="history_rating">rating</p>
-		    					<p class="history_comment">You commented:</p>
-		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		    					</p>
-		    				</td>
-		    			</tr>
+						<?php
+		                    $query_order=mysqli_query($con,"SELECT * FROM `order` WHERE `cust_id`='".$user_id."'") or die(mysqli_error($con));
+
+		                    if(mysqli_num_rows($query_order)!=0)
+		                    {
+		                        while($row=mysqli_fetch_assoc($query_order)) {
+			                    	$driver_query=mysqli_query($con,"SELECT username FROM user WHERE user_id='".$row['driver_id']."'") or die(mysqli_error());
+			                    	$driver_row=mysqli_fetch_assoc($driver_query);
+			                    	$driver_name=$driver_row['username'];
+		                            echo
+		                            	"<tr>
+		                            		<td>
+		                            			<img class='history_pict' src='../profile/getProfilePict.php?id=".$row['driver_id']."'
+		                            		</td>
+		                            		<td>
+		                            			<p class='history_date'>".$row['date']."</p>
+						    					<p class='history_username'>".$driver_name."</p>
+						    					<p class='history_loc'>".$row['pick_city']." - ".$row['dest_city']."</p>
+						    					<p class='history_rating'>rating ".$row['score']."</p>
+						    					<p class='history_comment'>You commented:</p>
+						    					<p class='history_comment' style='margin-left: 30px;'>".$row['comment']."</p>
+		                            		</td>
+		                            	</tr>";
+		                        }
+		                    }
+		                    mysqli_close($con);
+		                ?>
 					</tbody>
 	    		</table>
     		</div>

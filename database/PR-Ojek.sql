@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `driver` (
 	`driver_id`     INT             NOT NULL,
 	`total_score`   DOUBLE(50,1)    NOT NULL DEFAULT '0.0',
-	`votes`         DOUBLE(50,1)    NOT NULL DEFAULT '0.0',
+	`votes`         INT             NOT NULL DEFAULT '0',
 
     CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `user` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
