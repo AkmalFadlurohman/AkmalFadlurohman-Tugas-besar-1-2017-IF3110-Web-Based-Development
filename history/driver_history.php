@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>transaction history</title>
+	<title>driver history</title>
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/history.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -34,12 +34,12 @@
 
     		<ul class="page_menu">
     			<li>
-    				<a class="history_menu menu_active" href=<?php echo 'transaction_history.php?id='.$user_id; ?>>
+    				<a class="history_menu" href=<?php echo 'transaction_history.php?id='.$user_id; ?>>
 						<h3>MY PREVIOUS ORDER</h3>
 					</a>
     			</li>
     			<li>
-    				<a class="history_menu" href=<?php echo 'driver_history.php?id='.$user_id; ?>>
+    				<a class="history_menu menu_active" href=<?php echo 'driver_history.php?id='.$user_id; ?>>
 						<h3>DRIVER HISTORY</h3>
 					</a>
     			</li>
