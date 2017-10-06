@@ -20,7 +20,6 @@
                     $username = $row['username'];
                     include("../template/header.php");
                 }
-                mysqli_close($con);
             ?>
         </div>
         <div class="menu_container">
@@ -57,6 +56,30 @@
             <div class="subheader">
                 <div class="title"><h1>Preferred Locations</h1></div>
                 <div class="edit_prefloc_button"><a href=<?php echo 'edit_location.php?id='.$user_id; ?>>✎</a></div>
+            </div>
+            <div class="prefloc_list">
+                <?php
+                    $query=mysqli_query($con,"SELECT pref_loc FROM driver_prefloc WHERE driver_id='".$user_id."'") or die(mysqli_error());
+                    $numrows = mysqli_num_rows($query);
+                    if($numrows !=0)
+                    {
+                        $i = 1;
+                        $buffer = '<ul>';
+                        while ($row=mysqli_fetch_assoc($query)) {
+                            if ($i != $numrows) {
+                                $buffer .= '<li>►'.$row['pref_loc'].'</li><ul>';
+                                $i++;
+                            } else {
+                                $buffer .= '<li>►'.$row['pref_loc'].'</li>';
+                            }
+                        }
+                        for ($i = 0;$i <= $row; $i++) {
+                            $buffer .= '</ul>';
+                        }
+                        echo $buffer;
+                    }
+                    mysqli_close($con);
+                ?>
             </div>
         </div>
     </div>
