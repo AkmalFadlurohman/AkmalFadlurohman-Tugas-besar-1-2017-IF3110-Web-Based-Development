@@ -30,23 +30,17 @@
 
 		<h1>Make an Order</h1>
 		<div class="submenu_container">
-			<a href="order/select_location.html">
-				<div class="submenu left">
-					Select Destination
-				</div>
-			</a>
-			
-			<a id="xxx">
-				<div class="submenu mid" id="xxx">
-					Select a Driver
-				</div>
-			</a>
+			<div class="submenu left" onclick="showSelectDest()">
+				Select Destination
+			</div>
+		
+			<div class="submenu mid" onclick="showSelectDriver()">
+				Select a Driver
+			</div>
 
-			<a href="order/complete_order.html">
-				<div class="submenu right">
-					Complete Order
-				</div>
-			</a>
+			<div class="submenu right" onclick="showCompleteOrder()">
+				Complete Order
+			</div>
 		</div>
 		<form method="post">
 			<div class="content" id="select_destination">
@@ -64,7 +58,7 @@
 						<input type="text" name="preferred_driver">
 					</div>
 				</div>
-				<div class="button green" id="next">
+				<div class="button green" id="next" onclick="showSelectDriver()">
 					Next
 				</div>
 			</div>
@@ -89,14 +83,23 @@
 	</div>
 
 	<script type="text/javascript">
-		var element = document.getElementById('next');
-		// element.onclick = function () {
-		// 	alert('hi');
-		// };
-		element.onclick = function () {
-				document.getElementById('select_destination').style.display='none';
-				document.getElementById('select_driver').style.display='inline';
-			}
+		function showSelectDest() {
+			document.getElementById('select_destination').style.display= 'inline';
+			document.getElementById('select_driver').style.display= 'none';
+			document.getElementById('complete_order').style.display= 'none';
+		};
+
+		function showSelectDriver() {
+			document.getElementById('select_driver').style.display= 'inline';
+			document.getElementById('select_destination').style.display= 'none';
+			document.getElementById('complete_order').style.display= 'none';
+		};
+
+		function showCompleteOrder() {
+			document.getElementById('complete_order').style.display='inline';
+			document.getElementById('select_destination').style.display= 'none';
+			document.getElementById('select_driver').style.display= 'none';
+		};
 	</script>
 </body>
 </html>

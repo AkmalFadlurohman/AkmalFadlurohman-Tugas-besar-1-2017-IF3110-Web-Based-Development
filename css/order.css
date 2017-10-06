@@ -42,12 +42,15 @@
 	margin: 5px 0px 5px 0px;
 }
 
+.content > div div {
+	display: inline;
+}
 .content > div > span {
 	float: left;
 }
 
 .content > div > input[type="text"] {
-	width: 200px; 
+	width: 100px; 
 	float: right;
 }
 
