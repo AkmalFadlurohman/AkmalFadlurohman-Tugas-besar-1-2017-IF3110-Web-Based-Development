@@ -40,7 +40,9 @@
                         echo "</br><strong>".$row['username']."</strong></br>";
                         echo $row['name']."</br>";
                         if ($row['status'] == "driver") {
-                            echo "driver | Rating (xxx Votes)</br>";
+                            echo "Driver | Rating (xxx Votes)</br>";
+                        } else {
+                            echo "No-Driver</br>";
                         }
                         echo $row['email']."</br>";
                         echo $row['phone']."</br>";
