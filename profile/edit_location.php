@@ -43,10 +43,10 @@
                     {
                         $i = 1;
                         while($row=mysqli_fetch_assoc($query)) {
-                            echo '  <tr>
+                            echo    '<tr>
                                         <td>'.$i.'</td>
                                         <td>'.$row['pref_loc'].'</td>
-                                        <td><div class="edit_button">✎</div><div class="delete_button"><a href="'deletePrefLoc.php?id='.$user_id.'%26&loc='.$row['pref_loc']'">✖</a></div></td>
+                                        <td><div class="edit_button">✎</div><div class="delete_button"><a href=deletePrefLoc.php?id='.urlencode($user_id).'&loc='.urlencode($row['pref_loc']).'>✖</a></div></td>
                                     </tr>';
                             $i++;
                         }
