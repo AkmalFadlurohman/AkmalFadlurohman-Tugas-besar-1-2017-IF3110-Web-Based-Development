@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
 	<link rel="stylesheet" type="text/css" href="../css/order.css">
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<script type="text/javascript"></script>
 </head>
 <body>
 	<div class="frame">
@@ -31,23 +32,58 @@
 		<h1>Make an Order</h1>
 		<div class="submenu_container">
 			<a href="order/select_location.html">
-				<div class="submenu">
+				<div class="submenu left">
 					Select Destination
 				</div>
 			</a>
 			
 			<a href="order/select_driver.html">
-				<div class="submenu">
-					Select Driver
+				<div class="submenu mid">
+					Select a Driver
 				</div>
 			</a>
 
 			<a href="order/complete_order.html">
-				<div class="submenu">
+				<div class="submenu right">
 					Complete Order
 				</div>
 			</a>
 		</div>
+		<form method="post">
+			<div class="content" id="select_destination" style="display: none;">
+				<div>
+					<span>Picking point</span>
+					<input type="text" name="picking_point">
+				</div>
+				<div>
+					<span>Destination</span>
+					<input type="text" name="destination">
+				</div>
+				<div>
+					<span>Preferred driver</span>
+					<input type="text" name="preferred_driver">
+				</div>
+				<div class="button green" id="next">
+					Next
+				</div>
+			</div>
+			<div class="content" id="select_driver" style="display: none;">
+				<div id="preferred_driver">
+					<h2>Preferred driver</h2>
+				</div>
+				<div id="other_driver">
+					<h2>Other drivers</h2>
+				</div>
+				<div id="selected_driver" style="display: none">
+					<input type="text" name="selected_driver">
+				</div>
+			</div>
+			<div class="content" id="complete_order">
+				<h2>
+					How was it?
+				</h2>
+			</div>
+		</form>
 	</div>
 </body>
 </html>

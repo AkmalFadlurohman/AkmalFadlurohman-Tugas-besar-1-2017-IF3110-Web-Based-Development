@@ -2,19 +2,64 @@
 	text-align: left;
 }
 
+.submenu_container {
+	width: 360px;
+	display: inline-flex;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
 .submenu {
 	width: 100px;
 	height: 40px;
 	float: left;
-	border: 0.5px solid black; 
-	margin-left: auto;
-	margin-right: auto;
+	border: 0.5px solid black;
+	font-size: 15px;
+	text-align: center;
 }
 
-.submenu_container {
-	width: 360px;
-	margin-left: auto; 
-	margin-right: auto;
+.submenu.left {
+	float: left;
+}
+
+.submenu.mid {
+	margin-left: 29px;
+	margin-right: 29px;
+}
+
+.submenu.right {
+	float: right;
+}
+
+.content {
+	width: 350px;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.content > div {
+	margin: 5px 0px 5px 0px;
+}
+
+.content > div > span {
+	float: left;
+}
+
+.content > div > input[type="text"] {
+	width: 200px; 
+	float: right;
+}
+
+#next {
+	
+}
+
+#select_driver div {	
+	border: 0.5px solid black;
+}
+
+#preferred_driver {
 }
 
 #order_link {
