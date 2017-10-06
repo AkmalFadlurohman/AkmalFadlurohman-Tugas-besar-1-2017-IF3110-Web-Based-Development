@@ -67,39 +67,6 @@
         </form>
 	</div>
     <script>
-        function validateUsername() {
-            if (document.sign_up.username.value.length > 20)
-            {
-                window.alert("Username should be 1 to 20 characters long");
-                return false;
-            }
-        }
-        function validateEmail() {
-            var email = document.sign_up.user_email.value;
-            var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
-            if (!re.test(email))
-            {
-                window.alert("Please enter a valid email address");
-                return false;
-            }
-        }
-        function validatePassword()
-        {
-            var password = document.sign_up.user_password.value;
-            var confirm_password = document.sign_up.confirm_password.value;
-            if (password !== confirm_password)
-            {
-                window.alert("The passwords you entered didn't match");
-                return false;
-            }
-        }
-        function validatePhone() {
-            if ((document.sign_up.user_phone.value.length < 9) || (document.sign_up.user_phone.value.length > 12))
-            {
-                window.alert("Phone number should be 9 to 12 characters long");
-                return false;
-            }
-        }
         function validateForm() {
             var email = document.sign_up.user_email.value;
             var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
@@ -124,20 +91,16 @@
             } else if (document.sign_up.username.value.length > 20) {
                 window.alert("Username should be 1 to 20 characters long");
                 return false;
-            } else if (!re.test(emaildocument.sign_up.user_email.value)) {
+            } else if (!re.test(document.sign_up.user_email.value)) {
                 window.alert("Please enter a valid email address");
                 return false;
-            } else if document.sign_up.user_password.value !== document.sign_up.confirm_password.value;) {
+            } else if (document.sign_up.user_password.value !== document.sign_up.confirm_password.value) {
                 window.alert("The passwords you entered didn't match");
                 return false;
             } else if ((document.sign_up.user_phone.value.length < 9) || (document.sign_up.user_phone.value.length > 12)) {
                 window.alert("Phone number should be 9 to 12 characters long");
                 return false;
             }
-            //validateUsername();
-            //validateEmail();
-            //validatePassword();
-            //validatePhone();
         }
         function checkAvailability(name,value)
         {
