@@ -6,6 +6,9 @@
     mysqli_close($con);
     if (isset($row['pict'])) {
         header("Content-type: image/jpeg");
-        echo $row['pict'];        
+        echo $row['pict'];
+    } else {
+        header("Content-type: image/jpeg");
+        echo "../img/default_profile.jpeg";        
     }
 ?>
