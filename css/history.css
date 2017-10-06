@@ -58,7 +58,6 @@ table.history_table {
 table.history_table p {
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
 	font-style: "Lucida Console", Monaco, monospace;
 }
 
@@ -67,6 +66,7 @@ td.history_column {
 }
 
 p.history_date {
+	font-size: 14px;
 	color: grey;
 	font-weight: bold;
 }
@@ -77,20 +77,20 @@ p.history_username {
 }
 
 p.history_loc {
-
+	font-size: 14px;
 }
 
 p.history_rating {
-
+	font-size: 14px;
 }
 
 p.history_comment {
-
+	font-size: 14px;
 }
 
 table.history_table th, td {
 	border: 1px solid purple;
-    padding: 0;
+    padding: 5px;
     border-collapse: collapse;
 }
 
@@ -101,7 +101,6 @@ p.history_table td {
 img.history_pict {
     width: 100px;
     height: 100px;
-    overflow: auto;
     border-radius: 50%;
     display: inline;
     margin: 0;
