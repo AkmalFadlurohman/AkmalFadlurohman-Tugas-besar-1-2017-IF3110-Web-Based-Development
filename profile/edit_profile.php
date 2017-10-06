@@ -74,21 +74,20 @@
                 <div class="edit_profile_nav">
                     <a href=<?php echo 'profile.php?id='.$user_id; ?>><div class="button red back" style="float: left; margin-left: 20px;">BACK</div></a>
                     <input type="submit" value="SAVE" style="float: right;" class="button green save">
-                    <input id="hidden_userid" name="hidden_userid" type="text" style="display:none;">
+                    <input name="hidden_userid" type="hidden" value= <?php echo $user_id ?>>
                 </div>
             </form>
         </div>
     </div>
     <?php
         if ($current_stat == "driver") {
-            echo "<script>document.getElementById('current_name').value = '".$row['name']."';</script>";
+            echo "<script>document.getElementById('current_stat').checked = true;</script>";
         }
+        echo "<script>document.getElementById('current_name').value = '".$row['name']."';</script>";
         echo "<script>document.getElementById('current_phone').value = '".$row['phone']."';</script>";
-        echo "<script>document.getElementById('current_stat').checked = true;</script>";
         if (isset($row['pict'])) {
             echo "<script>document.getElementById('current_profile_pict').src ='getProfilePict.php?id=".$user_id."'</script>";
         }
-        echo "<script>document.getElementById('hidden_userid').value =".$user_id."</script>";
     ?>
     <script>
         function showFileName(inputFile) {
