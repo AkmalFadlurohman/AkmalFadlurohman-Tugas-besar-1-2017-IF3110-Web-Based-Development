@@ -73,3 +73,14 @@ a:hover {
     margin-right: auto;
 }
 
+.subheader {
+    height: 15%;
+}
+.title {
+    float: left;
+}
+.title h1 {
+    text-align: left;
+    margin: 0;
+}
+

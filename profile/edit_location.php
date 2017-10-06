@@ -20,7 +20,7 @@
                 $username = $row['username'];
                 include("../template/header.php");
             }
-            mysqli_close($con);
+            
             ?>
         </div>
     <div class="menu_container">
@@ -30,8 +30,33 @@
         <div class="subheader">
             <div class="title"><h1>Edit Preferred Location</h1></div>
         </div>
+        <div class="display_loc_frame">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Locations</th>
+                    <th>Actions</th>
+                </tr>
+                <?php
+                    $query=mysqli_query($con,"SELECT pref_loc FROM driver_prefloc WHERE driver_id='".$user_id."'") or die(mysqli_error());
+                    if(mysqli_num_rows($query)!=0)
+                    {
+                        $i = 1;
+                        while($row=mysqli_fetch_assoc($query)) {
+                            echo '  <tr>
+                                        <td>'.$i.'</td>
+                                    <td>'.$row['pref_loc'].'</td>
+                                    <td><div class="edit_button">✎</div><div class="delete_button">✖</div></td>
+                                </tr>';
+                            $i++;
+                        }
+                    }
+                ?>
+            </table>
+
+        </div>
         <div class="add_loc_frame">
-            <h2> Add New Location</h2>
+            <h2>Add New Location</h2>
             <form name="add_location" action="updateLocation.php" method="POST">
                 <input type="text" name="new_location">
                 <input type="text" id="hidden_userid" name="hidden_userid" style="display: none;">
