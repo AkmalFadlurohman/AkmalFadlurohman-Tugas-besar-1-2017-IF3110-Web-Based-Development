@@ -31,7 +31,6 @@
         	<div class="subheader">
         		<div class="title"><h1>Transaction History</h1></div>
         	</div>
-
     		<ul class="page_menu">
     			<li>
     				<a class="history_menu menu_active" href=<?php echo 'transaction_history.php?id='.$user_id; ?>>
