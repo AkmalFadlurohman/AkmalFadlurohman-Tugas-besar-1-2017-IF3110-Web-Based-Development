@@ -5,5 +5,34 @@
 }
 
 .history_container > * {
-	border: 1px solid red;
+	
+}
+
+.page_menu {
+    list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.page_menu > li {
+	width: 50%;
+	display: inline;
+	float: left;
+}
+
+.history_menu {
+	border: 0.5px solid black; 
+    text-align: center;
+    font-family: calibri;
+
+	position: relative;;
+	border: 0.5px solid black;
+	display: block;
+
+	text-decoration: none;
+}
+
+.history_menu > h3 {
+	margin: 0;
 }
