@@ -28,8 +28,20 @@
     </div>
     <div class="editloc_container">
         <div class="subheader">
-            <div class="title"><h1>Edit Preferred Loaction</h1></div>
+            <div class="title"><h1>Edit Preferred Location</h1></div>
         </div>
+        <div class="add_loc_frame">
+            <h2> Add New Location</h2>
+            <form name="add_location" action="">
+                <input type="text" name="new_location">
+                <input type="text" name="hidden_userid" style="display: none;">
+                <input type="submit" value="ADD" class="button green add">
+            </form>
+        </div>
+        <a href=<?php echo 'profile.php?id='.$user_id; ?>><div class="button red back">BACK</div></a>
     </div>
+    <?php
+        echo "<script>document.getElementById('hidden_userid').value =".$user_id."</script>";
+    ?>
 </body>
 </html>

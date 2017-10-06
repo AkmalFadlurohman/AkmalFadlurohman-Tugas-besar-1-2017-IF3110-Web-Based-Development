@@ -1,6 +1,12 @@
 -- Database PR-Ojek
 
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `driver_prefloc`;
+DROP TABLE IF EXISTS `driver`;
 DROP TABLE IF EXISTS `user`;
+SET FOREIGN_KEY_CHECKS = 1;
+
 CREATE TABLE IF NOT EXISTS `user` (
 	`user_id`     INT         NOT NULL AUTO_INCREMENT,
     `name`        VARCHAR(50) NOT NULL,
@@ -12,29 +18,25 @@ CREATE TABLE IF NOT EXISTS `user` (
 	`pict`        MEDIUMBLOB  DEFAULT NULL,
 
 	PRIMARY KEY (`user_id`)
-);
+) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `driver`;
 CREATE TABLE IF NOT EXISTS `driver` (
 	`driver_id`     INT             NOT NULL,
-	`total_score`   DOUBLE(50,1)    NOT NULL,
-	`votes`         DOUBLE(50,1)    NOT NULL,
+	`total_score`   DOUBLE(50,1)    NOT NULL DEFAULT '0.0',
+	`votes`         DOUBLE(50,1)    NOT NULL DEFAULT '0.0',
 
-	PRIMARY KEY (`driver_id`),
-	CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `user` (`user_id`)
-);
+    CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `user` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `driver_prefloc`;
 CREATE TABLE IF NOT EXISTS `driver_prefloc` (
 	`driver_id`   INT         NOT NULL,
     `pref_loc`    VARCHAR(50) NOT NULL,
 
-	PRIMARY KEY (`driver_id`),
-	CONSTRAINT `driver_prefloc_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `driver` (`driver_id`)
-);
+	CONSTRAINT `driver_prefloc_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `driver` (`driver_id`) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `order` (
-	`order_id`       INT             NOT NULL,
+	`order_id`       INT            NOT NULL  AUTO_INCREMENT,
 	`dest_city`     VARCHAR(50)     NOT NULL,
 	`pick_city`     VARCHAR(50)     NOT NULL,
     `score`         DOUBLE(50,1)    NOT NULL,
@@ -44,6 +46,6 @@ CREATE TABLE IF NOT EXISTS `order` (
     `date`          DATE            NOT NULL,
 
 	PRIMARY KEY (`order_id`),
-	CONSTRAINT `order_ibfk_1` FOREIGN KEY (`cust_id`) REFERENCES `user` (`user_id`),
-    CONSTRAINT `order_ibfk_2` FOREIGN KEY (`driver_id`) REFERENCES `driver` (`driver_id`)
-);
+	CONSTRAINT `order_ibfk_1` FOREIGN KEY (`cust_id`) REFERENCES `user` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT `order_ibfk_2` FOREIGN KEY (`driver_id`) REFERENCES `driver` (`driver_id`) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB;
