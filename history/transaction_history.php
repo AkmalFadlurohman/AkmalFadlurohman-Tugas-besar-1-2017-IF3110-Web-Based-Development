@@ -43,6 +43,63 @@
 					</a>
     			</li>
     		</ul>
+
+    		<div id="history_table_container">
+	    		<table class="history_table">
+					<colgroup>
+						<col style="width: 20%;">
+						<col style="width: 80%;">
+					</colgroup>
+
+					<tbody>
+		    			<tr>
+		    				<td>
+	               				<img class="history_pict" src="../img/default_profile.jpeg">
+	            			</td>
+		    				<td class="history_column">
+		    					<p class="history_date">tanggal</p>
+		    					<p class="history_username">Username</p>
+		    					<p class="history_loc">asal - tujuan</p>
+		    					<p class="history_rating">rating</p>
+		    					<p class="history_comment">You commented:</p>
+		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		    					</p>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td>
+	               				<img class="history_pict" src="../img/default_profile.jpeg">
+	            			</td>
+		    				<td class="history_column">
+		    					<p class="history_date">tanggal</p>
+		    					<p class="history_username">Username</p>
+		    					<p class="history_loc">asal - tujuan</p>
+		    					<p class="history_rating">rating</p>
+		    					<p class="history_comment">You commented:</p>
+		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		    					</p>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td>
+	               				<img class="history_pict" src="../img/default_profile.jpeg">
+	            			</td>
+		    				<td class="history_column">
+		    					<p class="history_date">tanggal</p>
+		    					<p class="history_username">Username</p>
+		    					<p class="history_loc">asal - tujuan</p>
+		    					<p class="history_rating">rating</p>
+		    					<p class="history_comment">You commented:</p>
+		    					<p class="history_comment" style="margin-left: 30px;">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		    					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		    					</p>
+		    				</td>
+		    			</tr>
+					</tbody>
+	    		</table>
+    		</div>
         </div>
 	</div>
 </body>
