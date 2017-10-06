@@ -29,16 +29,16 @@
         <div class="menu_container">
             <?php include'../template/menu.php';?>
         </div>
-        <div class="profile_container">
-            <div class="profile_header">
-                <div class="profile_title"><h1>My Profile</h1></div>
+        <div class="top_container">
+            <div class="subheader">
+                <div class="title"><h1>My Profile</h1></div>
                 <div class="edit_profile_button"><a href=<?php echo 'edit_profile.php?id='.$user_id; ?>>✎</a></div>
             </div>
-            <div class="myprofile">
-                <div class="profilepict_frame">
+            <div class="profile_info_container">
+                <div class="profile_pict_frame">
                     <img id="profile_pict" src="../img/default_profile.jpeg">
                 </div>
-                <div class="profile_info">
+                <div class="profile_data_container">
                     <?php
                         echo "</br><strong>".$row['username']."</strong></br>";
                         echo $row['name']."</br>";
@@ -52,6 +52,12 @@
                         }
                     ?>
                 </div>
+            </div>
+        </div>
+        <div class="top_container">
+            <div class="subheader">
+                <div class="title"><h1>Preferred Locations</h1></div>
+                <div class="edit_prefloc_button"><a href=<?php echo 'edit_location.php?id='.$user_id; ?>>✎</a></div>
             </div>
         </div>
     </div>
