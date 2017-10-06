@@ -21,6 +21,11 @@
 .profile_data_container {
     height: 100px;
 }
+.profile_data_container p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
 .prefloc_container {
     height: 50%;
 }
