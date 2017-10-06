@@ -10,7 +10,7 @@
 	<div class="frame">
 		<div class="header">
 			<?php
-                $user_id = $_GET['id'];
+			    $user_id = $_GET['id'];
                 include '../database/dbconnect.php';
                 
                 $query=mysqli_query($con,"SELECT * FROM user WHERE user_id='".$user_id."'") or die(mysqli_error());
@@ -43,23 +43,15 @@
 			</div>
 		</div>
 		<form method="post">
-			<div class="content" id="select_destination">
-				<div>
-					<div>
-						<span>Picking point</span>
-						<input type="text" name="picking_point">
-					</div>
-					<div>
-						<span>Destination</span>
-						<input type="text" name="destination">
-					</div>
-					<div>
-						<span>Preferred driver</span>
-						<input type="text" name="preferred_driver">
-					</div>
+			<div class="content" id="select_driver" style="display: none;">
+				<div id="preferred_driver">
+					<h2>Preferred driver</h2>
 				</div>
-				<div class="button green" onclick="showSelectDriver()">
-					Next
+				<div id="other_driver">
+					<h2>Other drivers</h2>
+				</div>
+				<div id="selected_driver" style="display: none">
+					<input type="text" name="selected_driver">
 				</div>
 			</div>
 		</form>

@@ -58,7 +58,7 @@
 						<input type="text" name="preferred_driver">
 					</div>
 				</div>
-				<div class="button green" id="next" onclick="showSelectDriver()">
+				<div class="button green" onclick="showSelectDriver()">
 					Next
 				</div>
 			</div>
@@ -83,7 +83,9 @@
 	</div>
 
 	<script type="text/javascript">
+		var pref_driver = $("input#preferred_driver").val();
 		function showSelectDest() {
+			alert(pref_driver);	
 			document.getElementById('select_destination').style.display= 'inline';
 			document.getElementById('select_driver').style.display= 'none';
 			document.getElementById('complete_order').style.display= 'none';
