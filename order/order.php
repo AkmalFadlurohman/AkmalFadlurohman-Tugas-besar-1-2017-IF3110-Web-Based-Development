@@ -5,7 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
 	<link rel="stylesheet" type="text/css" href="../css/order.css">
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
-	<script type="text/javascript"></script>
 </head>
 <body>
 	<div class="frame">
@@ -37,8 +36,8 @@
 				</div>
 			</a>
 			
-			<a href="order/select_driver.html">
-				<div class="submenu mid">
+			<a id="xxx">
+				<div class="submenu mid" id="xxx">
 					Select a Driver
 				</div>
 			</a>
@@ -50,18 +49,20 @@
 			</a>
 		</div>
 		<form method="post">
-			<div class="content" id="select_destination" style="display: none;">
+			<div class="content" id="select_destination">
 				<div>
-					<span>Picking point</span>
-					<input type="text" name="picking_point">
-				</div>
-				<div>
-					<span>Destination</span>
-					<input type="text" name="destination">
-				</div>
-				<div>
-					<span>Preferred driver</span>
-					<input type="text" name="preferred_driver">
+					<div>
+						<span>Picking point</span>
+						<input type="text" name="picking_point">
+					</div>
+					<div>
+						<span>Destination</span>
+						<input type="text" name="destination">
+					</div>
+					<div>
+						<span>Preferred driver</span>
+						<input type="text" name="preferred_driver">
+					</div>
 				</div>
 				<div class="button green" id="next">
 					Next
@@ -78,12 +79,24 @@
 					<input type="text" name="selected_driver">
 				</div>
 			</div>
-			<div class="content" id="complete_order">
+			<div class="content" id="complete_order" style="display: none;">
 				<h2>
 					How was it?
 				</h2>
+				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
 	</div>
+
+	<script type="text/javascript">
+		var element = document.getElementById('next');
+		// element.onclick = function () {
+		// 	alert('hi');
+		// };
+		element.onclick = function () {
+				document.getElementById('select_destination').style.display='none';
+				document.getElementById('select_driver').style.display='inline';
+			}
+	</script>
 </body>
 </html>
