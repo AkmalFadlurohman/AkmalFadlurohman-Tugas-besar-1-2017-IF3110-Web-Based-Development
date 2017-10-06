@@ -24,6 +24,9 @@
 .prefloc_container {
     height: 50%;
 }
+.prefloc_container ul {
+    list-style-type: none;
+}
 .edit_prefloc_button {
     float: right;
     margin-top: 10px;
