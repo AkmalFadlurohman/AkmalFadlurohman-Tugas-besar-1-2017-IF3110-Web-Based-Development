@@ -12,3 +12,24 @@
     text-align: left;
     margin: 0;
 }
+.add_loc_frame {
+    height: 30%;
+}
+.add_loc_frame h2 {
+    text-align: left;
+    margin: 0;
+}
+.add_loc_frame input[type="text"] {
+    width: 80%;
+    margin-right: 5%;
+}
+.back {
+    width: 39px;
+    text-align: center;
+    padding: 3px;
+    font-size: 0.8em;
+    float: left;
+}
+.add {
+    width: 50px;
+}

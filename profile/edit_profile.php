@@ -18,6 +18,7 @@
                 if(mysqli_num_rows($query)!=0)
                 {
                     $row=mysqli_fetch_assoc($query);
+                    $current_stat = $row['status'];
                     $username = $row['username'];
                     include("../template/header.php");
                 }
@@ -31,7 +32,7 @@
             <div class="subheader">
                 <div class="title"><h1>My Profile</h1></div>
             </div>
-            <form name="edit_identity" method="POST" action="update_profile.php" enctype="multipart/form-data">
+            <form name="edit_identity" method="POST" action="updateProfile.php" enctype="multipart/form-data">
                 <div class="change_profilepict">
                     <div class="current_pict_frame">
                         <img id="current_profile_pict" src="../img/default_profile.jpeg">
@@ -64,7 +65,7 @@
                         </div>
                         <div style="height: 30px;">
                             <label class="switch" style="float: right;">
-                                <input type="checkbox" name="is_driver" value="true">
+                                <input type="checkbox" name="is_driver" id="current_stat" value="true">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -79,8 +80,11 @@
         </div>
     </div>
     <?php
-        echo "<script>document.getElementById('current_name').value = '".$row['name']."'</script>";
-        echo "<script>document.getElementById('current_phone').value = '".$row['phone']."'</script>";
+        if ($current_stat == "driver") {
+            echo "<script>document.getElementById('current_name').value = '".$row['name']."';</script>";
+        }
+        echo "<script>document.getElementById('current_phone').value = '".$row['phone']."';</script>";
+        echo "<script>document.getElementById('current_stat').checked = true;</script>";
         if (isset($row['pict'])) {
             echo "<script>document.getElementById('current_profile_pict').src ='getProfilePict.php?id=".$user_id."'</script>";
         }

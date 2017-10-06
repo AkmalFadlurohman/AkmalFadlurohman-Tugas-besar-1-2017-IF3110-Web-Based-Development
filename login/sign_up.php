@@ -29,11 +29,14 @@
                 $getUserID = mysqli_query($con,"SELECT user_id FROM user WHERE username='".$username."'") or die(mysql_error());
                 $row=mysqli_fetch_assoc($getUserID);
                 $user_id=$row['user_id'];
-                header("Location: ../profile/profile.php?id=?$user_id");
+                
                 if ($status == "customer") {
-                    header("Location: ../order/order.php?id=?$user_id");
+                    header("Location: ../order/order.php?id=$user_id");
                 } else {
-                    header("Location: ../order/order.php?id=?$user_id");
+                    $query = mysqli_query($con,"INSERT INTO driver (driver_id,total_score,votes) VALUES ('$user_id',0,0)") or die(mysqli_error($con));
+                    if ($query) {
+                        header("Location: ../profile/profile.php?id=$user_id");
+                    }
                 }
             }
             mysqli_close($con);

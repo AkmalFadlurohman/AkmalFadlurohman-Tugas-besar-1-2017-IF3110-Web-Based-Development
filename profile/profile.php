@@ -1,6 +1,3 @@
-<?php
-    
-?>
 <html>
 <head>
     <title>U Wanna Call Me Beibh?</title>
@@ -29,7 +26,7 @@
         <div class="menu_container">
             <?php include'../template/menu.php';?>
         </div>
-        <div class="top_container">
+        <div class="profile_container">
             <div class="subheader">
                 <div class="title"><h1>My Profile</h1></div>
                 <div class="edit_profile_button"><a href=<?php echo 'edit_profile.php?id='.$user_id; ?>>✎</a></div>
@@ -43,7 +40,9 @@
                         echo "</br><strong>".$row['username']."</strong></br>";
                         echo $row['name']."</br>";
                         if ($row['status'] == "driver") {
-                            echo "driver | Rating (xxx Votes)</br>";
+                            echo "Driver | Rating (xxx Votes)</br>";
+                        } else {
+                            echo "No-Driver</br>";
                         }
                         echo $row['email']."</br>";
                         echo $row['phone']."</br>";
@@ -54,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="top_container">
+        <div class="prefloc_container">
             <div class="subheader">
                 <div class="title"><h1>Preferred Locations</h1></div>
                 <div class="edit_prefloc_button"><a href=<?php echo 'edit_location.php?id='.$user_id; ?>>✎</a></div>

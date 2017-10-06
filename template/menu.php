@@ -5,7 +5,7 @@
 		<h3>ORDER</h3>
 	</div>
 	</a>
-	<a href="../history/history.php?id='. $user_id .'" name="history_link">
+	<a href="../history/transaction_history.php?id='. $user_id .'" name="history_link">
 	<div class="menu" id="history_link">
 		<h3>HISTORY</h3>
 	</div>
