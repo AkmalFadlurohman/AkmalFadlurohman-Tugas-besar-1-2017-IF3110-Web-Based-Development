@@ -143,7 +143,7 @@ div.rating_bar {
 #driver_table_container {
 	overflow-y: auto;
 	overflow-x: hidden;
-	height: inherit;
+	height: 70%;
 }
 
 img.driver_pict {
@@ -254,4 +254,11 @@ div#right_complete {
 div#finish_button_container {
 	width: 95%;
 	text-align: right;
+}
+
+div#preferred_driver, div#other_driver {
+	border: 1px solid black;
+	border-radius: 25px;
+	padding: 0 5px;
+	width: 95%;
 }
