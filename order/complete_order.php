@@ -59,7 +59,9 @@
 					How was it?
 				</h2>
 				<div>
-					<img class='driver_pict' src='../profile/getProfilePict.php?id='<?php echo .$user_id."'" ?>>
+					<?php echo "
+					<img class='driver_pict' src='../profile/getProfilePict.php?id=".$user_id."'>"
+					;?>
 					<p> @<?php echo $driver_username;?></p>
 					<p> <?php echo $driver_name;?></p>
 				</div>
