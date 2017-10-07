@@ -13,6 +13,11 @@
 		INSERT INTO `order`(dest_city, pick_city, score, comment, driver_id, cust_id, date)
 		VALUES ('".$dest_city."', '".$pick_city."', '".$score."', '".$comment."', '".$driver_id."', '".$cust_id."', '".$date."')
 		") or die(mysqli_error($con));
+	$modify1_driver_query = mysqli_query($con,"
+		UPDATE `driver`
+		SET votes = votes + 1, total_score = total_score + $score
+		WHERE driver_id = '$driver_id'
+		") or die(mysqli_error($con));
 
 	mysqli_close($con);
 	
