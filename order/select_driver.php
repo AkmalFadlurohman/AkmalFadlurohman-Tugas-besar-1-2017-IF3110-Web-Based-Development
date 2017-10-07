@@ -40,15 +40,19 @@
 							$driver_rating = ($driver_votes == 0) ? 0 : $row['total_score']/$row['votes'];
 							echo 
 								"
-								<table id='tbl_pref_driver'>
+								<table class='driver_table'>
+									<colgroup>
+										<col style='width: 20%;'>
+										<col style='width: 80%;'>
+									</colgroup>
 									<tr>
 		                        		<td>
 		                        			<img class='driver_pict' src='../profile/getProfilePict.php?id=".$driver_id."'
 		                        		</td>
-		                        		<td>
+		                        		<td class='driver_column'>
 					    					<p class='driver_username'>".$driver_name."</p>
 					    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
-					    					<div class='button green' onclick='chooseDriver(".$driver_id.")'>
+					    					<div class='choose_driver green' onclick='chooseDriver(".$driver_id.")'>
 					    						I CHOOSE YOU
 					    					</div>
 		                        		</td>
@@ -70,7 +74,7 @@
 		<script>
         	document.getElementById("order_link").setAttribute("class", "menu menu_active");
         </script>
-        
+
 		<div class="order_container">
 			<div class="subheader">
 	    		<div class="title"><h1>Make an Order</h1></div>
@@ -104,22 +108,26 @@
 				</div>
 			</div>
 
-			<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
-				<?php echo $ppoint . $dest; ?>
-				<div class="content" id="select_driver">
-					<div id="preferred_driver">
-						<h2>Preferred driver</h2>
-						<?php ShowPrefDrv($prefdrv, $con) ?>
+
+			<div id="driver_table_container">
+				<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
+					<?php echo $ppoint . $dest; ?>
+				
+					<div class="content" id="select_driver">
+						<div id="preferred_driver">
+							<h2>Preferred driver</h2>
+							<?php ShowPrefDrv($prefdrv, $con) ?>
+						</div>
+						<div id="other_driver">
+							<h2>Other drivers</h2>
+						</div>
+						<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+						<input type="hidden" name="destination" value=<?php echo $dest?>>
+						<input type="hidden" name="selected_driver" id="selected_driver">
 					</div>
-					<div id="other_driver">
-						<h2>Other drivers</h2>
-					</div>
-					<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
-					<input type="hidden" name="destination" value=<?php echo $dest?>>
-					<input type="hidden" name="selected_driver" id="selected_driver">
-				</div>
-			</form>
-			<?php mysqli_close($con) ?>
+				</form>
+				<?php mysqli_close($con) ?>
+			</div>
 		</div>
 </body>
 <script type="text/javascript">
