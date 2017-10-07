@@ -31,9 +31,14 @@
 }
 .prefloc_container {
     height: 50%;
+    margin-top : 0%;
 }
-.prefloc_container ul {
+.prefloc_list ul {
     list-style-type: none;
+    margin: 0;
+}
+.prefloc_list ul:first-child {
+     padding-left: 0px;
 }
 .edit_prefloc_button {
     float: right;

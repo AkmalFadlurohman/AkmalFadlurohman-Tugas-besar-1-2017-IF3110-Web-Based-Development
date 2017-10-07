@@ -73,31 +73,31 @@
                 <div class="edit_prefloc_button"><a href=<?php echo 'edit_location.php?id='.$user_id; ?>>✎</a></div>
             </div>
             <div class="prefloc_list">
-                <?php
-                    if ($row['status'] != "driver") {
-                        echo '<script>document.getElementById("display_prefloc").style.display = "none";</script>';
-                    }
-                    $query=mysqli_query($con,"SELECT pref_loc FROM driver_prefloc WHERE driver_id='".$user_id."'") or die(mysqli_error());
-                    $numrows = mysqli_num_rows($query);
-                    if($numrows !=0)
-                    {
-                        $i = 1;
-                        $buffer = '<ul>';
-                        while ($row=mysqli_fetch_assoc($query)) {
-                            if ($i != $numrows) {
-                                $buffer .= '<li>►'.$row['pref_loc'].'</li><ul>';
-                                $i++;
-                            } else {
-                                $buffer .= '<li>►'.$row['pref_loc'].'</li>';
-                            }
+            <?php
+                if ($row['status'] != "driver") {
+                    echo '<script>document.getElementById("display_prefloc").style.display = "none";</script>';
+                }
+                $query=mysqli_query($con,"SELECT pref_loc FROM driver_prefloc WHERE driver_id='".$user_id."'") or die(mysqli_error());
+                $numrows = mysqli_num_rows($query);
+                if($numrows !=0)
+                {
+                    $i = 1;
+                    $buffer = '<ul>';
+                    while ($row=mysqli_fetch_assoc($query)) {
+                        if ($i != $numrows) {
+                            $buffer .= '<li>►'.$row['pref_loc'].'</li><ul>';
+                            $i++;
+                        } else {
+                            $buffer .= '<li>►'.$row['pref_loc'].'</li>';
                         }
-                        for ($i = 0;$i <= $row; $i++) {
-                            $buffer .= '</ul>';
-                        }
-                        echo $buffer;
                     }
-                    mysqli_close($con);
-                ?>
+                    for ($i = 0;$i <= $row; $i++) {
+                        $buffer .= '</ul>';
+                    }
+                    echo $buffer;
+                }
+                mysqli_close($con);
+            ?>
             </div>
         </div>
     </div>
