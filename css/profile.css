@@ -10,6 +10,7 @@
 }
 .edit_profile_button a {
     text-decoration: none;
+    color: #f9880e;
 }
 .profile_info_container {
     text-align: center;
@@ -21,9 +22,12 @@
 .profile_data_container {
     height: 100px;
 }
+.username_display {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .profile_data_container p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0px;
     padding: 0px;
 }
 .prefloc_container {
@@ -39,6 +43,7 @@
 }
 .edit_prefloc_button a {
     text-decoration: none;
+    color: #f9880e;
 }
 .edit_profile_container {
     margin-top: 10%;
