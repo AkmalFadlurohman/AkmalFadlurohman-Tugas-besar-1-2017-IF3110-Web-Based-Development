@@ -37,7 +37,7 @@
 							$driver_name = $row['name'];
 							$driver_votes = $row['votes'];
 							$driver_rating = ($driver_votes == 0) ? 0 : $row['total_score']/$row['votes'];
-							if ($driver_id != $user_id) {
+							if ($driver_id != $GLOBALS['user_id']) {
 								echo 
 									"
 									<table class='driver_table'>
