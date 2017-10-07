@@ -17,19 +17,19 @@ Dibuat oleh:
 
 ### Login
 
-![](mocks/#login.JPG)
+![](mocks/login.JPG)
 
 Pengguna dapat melakukan login sebagai user. Login hanya membandingkan username dan password saja, dan tidak perlu proteksi apapun. Halaman ini merupakan halaman pertama yang dibuka oleh pengguna ketika menjalankan aplikasi. Tidak ada proses otentikasi apakah pengguna sudah login atau belum dalam page lainnya. Identitas pengguna yang sedang login diberikan melalui HTTP GET pada URL (sebagai contoh: /profile.php?id_active=2 menandakan bahwa pengguna yang sedang login memiliki id pengguna = 2).
 
 ### Register
 
-![](mocks/#sign_up.JPG)
+![](mocks/sign_up.JPG)
 
 Pengguna dapat mendaftarkan diri sebagai user agar dapat menggunakan aplikasi ini. Satu user akan memiliki satu akun yang dapat digunakan sebagai penumpang maupun sebagai driver. User disediakan opsi untuk memilih apakah dia mau menjadi driver atau tidak saat registrasi. Anda harus melakukan validasi bahwa email dan username yang sama tidak boleh digunakan untuk dua kali mendaftar. **Validasi email dan username dilakukan menggunakan AJAX**. Jika email dan username valid akan ditandai dengan lambang centang seperti pada gambar. Setelah selesai register, jika pengguna tidak memilih opsi untuk menjadi driver, pengguna otomatis masuk ke halaman Order dengan keadaan sudah login. Jika pengguna memilih opsi menjadi driver, pengguna otomatis masuk ke halaman Profile dengan keadaan sudah login.
 
 ### Profile
 
-![](mocks/#profile.JPG)
+![](mocks/profile.JPG)
 
 Pada halaman ini, ditampilkan username, nama lengkap, email, dan nomor HP. Selain itu, ditampilkan keterangan apakah pengguna merupakan driver atau bukan. Jika pengguna merupakan driver, ditampilkan tulisan Driver diikuti rating dan jumlah vote seperti terlihat pada gambar. Jika pengguna bukan driver, ditampilkan tulisan Non-Driver, tanpa diikuti rating. Pada bagian kanan atas, terdapat tombol edit, jika pengguna menekan tombol tersebut, pengguna dibawa ke halaman Edit-Profile.
 
@@ -37,7 +37,7 @@ Pada bagian bawah, terdapat Preferred Location, yang berisi daftar lokasi yang d
 
 ### Edit-Profile
 
-![](mocks/#edit_profile.JPG)
+![](mocks/edit_profile.JPG)
 
 Pada halaman ini, pengguna dapat mengedit nama yang ditampilkan, nomor telepon, foto, dan status driver.
 
@@ -49,7 +49,7 @@ Pada bagian bawah halaman, terdapat tombol Back dan Save. Jika tombol Back ditek
 
 ### Edit-Preferred-Location
 
-![](mocks/#edit_pref_location.JPG)
+![](mocks/edit_pref_location.JPG)
 
 Pada Edit-Preferred-Location, ditampilkan lokasi-lokasi yang dapat dicapai jika menjadi driver. Pada tiap baris lokasi, ada tombol Delete. Jika tombol tersebut ditekan, akan tampil konfirmasi untuk delete, menggunakan Javascript. Setelah Delete, halaman akan refresh.
 
@@ -63,7 +63,7 @@ Catatan: Format alamat dibebaskan kepada mahasiswa.
 
 ### Order-Ojek
 
-![](mocks/#order_location.JPG)
+![](mocks/order_location.JPG)
 
 Order-Ojek merupakan halaman utama yang ditampilkan ketika user telah login. Pada halaman Order-Ojek, terdapat sebuah form yang dapat diisi pengguna untuk melakukan order.
 
@@ -73,7 +73,7 @@ Setelah pengguna mengisi field-field pada form order dan menekan tombol order, p
 
 ### Select-Driver
 
-![](mocks/#order_driver.JPG)
+![](mocks/order_driver.JPG)
 
 Pada halaman ini, ditampilkan driver-driver yang tersedia dan dapat mengambil order. Driver yang dapat mengambil order adalah pengguna yang menjadi driver, dan memiliki alamat asal *atau* alamat tujuan pada "Preferred Location"-nya.
 
@@ -87,8 +87,8 @@ Setelah memilih driver dan menekan tombol Confirm, pengguna dibawa ke halaman Co
 
 ### Complete-Order
 
-![](mocks/#order_complete1.JPG)
-![](mocks/#order_complete2.JPG)
+![](mocks/order_complete1.JPG)
+![](mocks/order_complete2.JPG)
 
 Pada halaman Complete-Order, akan ditampilkan informasi driver dan order, serta opsi untuk memberikan rating dan komentar. Setelah pengguna submit rating dan komentar untuk driver, pengguna dibawa ke halaman Order-Ojek.
 
@@ -98,9 +98,9 @@ Rating untuk driver berupa integer antara 1 sampai 5 (inklusif). Implementasi ra
 
 ### History
 
-![](mocks/#order_history.JPG)
+![](mocks/order_history.JPG)
 
-![](mocks/#driver_history.JPG)
+![](mocks/driver_history.JPG)
 
 Pada halaman history, terdapat dua tab, yaitu History Penumpang dan History Driver. History Penumpang menampilkan daftar order yang pernah diambil pengguna sebagai penumpang, dan History Driver menampilkan daftar order yang pernah diambil pengguna sebagai driver.
 
