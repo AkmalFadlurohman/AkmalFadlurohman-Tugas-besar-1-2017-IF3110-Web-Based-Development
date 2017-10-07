@@ -48,7 +48,7 @@
 		                        		<td>
 					    					<p class='driver_username'>".$driver_name."</p>
 					    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
-					    					<div class='button green' onclick='chooseDriver()'>
+					    					<div class='button green' onclick='chooseDriver(".$driver_id.")'>
 					    						I CHOOSE YOU
 					    					</div>
 		                        		</td>

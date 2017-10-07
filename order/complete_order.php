@@ -21,13 +21,15 @@
                     $username = $row['username'];
                     include("../template/header.php");
                 }
-                mysqli_close($con);
 
                 //==================================================
 
                 $ppoint = $_POST['picking_point'];
 				$dest = $_POST['destination'];
 				$seldrv = $_POST['selected_driver'];
+
+				$driverinfo_query = mysqli_query($con, "SELECT * FROM driver WHERE driver_id ='".$seldrv."'") or die(mysqli_error());
+				$driverinfo = mysqli_fetch_assoc($driverinfo_query);
             ?>
 		</div>
 		<div class="menu_container">
@@ -58,6 +60,7 @@
 				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
+		<?php mysqli_close($con); ?>
 	</div>
 </body>
 </html>
