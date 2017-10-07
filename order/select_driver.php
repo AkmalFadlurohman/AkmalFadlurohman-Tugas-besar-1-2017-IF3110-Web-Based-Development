@@ -30,35 +30,36 @@
 				
 				function ShowPrefDrv($prefdrv, $con)
 				{
-					if (!(is_null($prefdrv))) {
-						$pdQuery = mysqli_query($con, "SELECT * FROM driver INNER JOIN user ON driver_id = user_id WHERE name='$prefdrv'") or die(mysqli_error($con));
-
+					$pdQuery = mysqli_query($con, "SELECT * FROM driver INNER JOIN user ON driver_id = user_id WHERE name='$prefdrv'") or die(mysqli_error($con));
+					if (mysqli_num_rows($pdQuery)!=0) {
 						while ($row = mysqli_fetch_assoc($pdQuery)) {
 							$driver_id = $row['driver_id'];
 							$driver_name = $row['name'];
 							$driver_votes = $row['votes'];
 							$driver_rating = ($driver_votes == 0) ? 0 : $row['total_score']/$row['votes'];
-							echo 
-								"
-								<table class='driver_table'>
-									<colgroup>
-										<col style='width: 20%;'>
-										<col style='width: 80%;'>
-									</colgroup>
-									<tr>
-		                        		<td>
-		                        			<img class='driver_pict' src='../profile/getProfilePict.php?id=".$driver_id."'
-		                        		</td>
-		                        		<td class='driver_column'>
-					    					<p class='driver_username'>".$driver_name."</p>
-					    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
-					    					<div class='choose_driver green' onclick='chooseDriver(".$driver_id.")'>
-					    						I CHOOSE YOU
-					    					</div>
-		                        		</td>
-		                        	</tr>
-								</table>	
-	                        	";
+							if ($driver_id != $user_id) {
+								echo 
+									"
+									<table class='driver_table'>
+										<colgroup>
+											<col style='width: 20%;'>
+											<col style='width: 80%;'>
+										</colgroup>
+										<tr>
+			                        		<td>
+			                        			<img class='driver_pict' src='../profile/getProfilePict.php?id=".$driver_id."'
+			                        		</td>
+			                        		<td class='driver_column'>
+						    					<p class='driver_username'>".$driver_name."</p>
+						    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
+						    					<div class='choose_driver green' onclick='chooseDriver(".$driver_id.")'>
+						    						I CHOOSE YOU
+						    					</div>
+			                        		</td>
+			                        	</tr>
+									</table>	
+		                        	";
+							}
 						}
 					}
 					else
