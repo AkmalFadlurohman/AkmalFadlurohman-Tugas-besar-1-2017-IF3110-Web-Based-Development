@@ -45,15 +45,40 @@ tr td:nth-child(1),td:nth-child(2) {
 tr th:nth-child(3) {
 
 }
+.edit_operation {
+    display: block;
+}
 .edit_button {
+    border: none;
     color: #82d800;
     float: left;
     margin-left: 15%;
+    cursor: pointer;
 }
 .delete_button {
     color: #ff0000;
     float: right;
     margin-right: 15%;
+    cursor: pointer;
+}
+.save_button {
+    border: none;
+    color: #82d800;
+    text-decoration: underline;
+    background-color: transparent;
+    float: left;
+    width: 35px;
+    cursor: pointer;
+}
+.cancel_button {
+    color: #ff0000;
+    float: right;
+    margin-top: 5%;
+    margin-right: 15%;
+    font-size: 0.6em;
+    width: 25px;
+    cursor: pointer;
+    text-decoration: underline;
 }
 .add_loc_frame {
     margin-top: 10%;
@@ -76,4 +101,5 @@ tr th:nth-child(3) {
 }
 .add {
     width: 50px;
+    cursor: pointer;
 }
