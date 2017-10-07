@@ -11,14 +11,12 @@
             if(isset($_POST['is_driver']))
             {
                 $status = 'driver';
-                if ($current_stat != "driver") {
+                $checkRegisteredDriver = mysqli_query($con,"SELECT * FROM driver WHERE driver_id='".$user_id."'") or die(mysql_error($con));
+                if ($current_stat != "driver" && mysqli_num_rows($checkRegisteredDriver)==0) {
                     $query = mysqli_query($con,"INSERT INTO driver (driver_id) VALUES ('$user_id')") or die(mysqli_error($con));
                 }
             } else
             {
-                if ($current_stat == "driver") {
-                    $query = mysqli_query($con,"DELETE FROM driver WHERE driver_id='".$user_id."'") or die(mysqli_error($con));
-                }
                 $status = 'customer';
             }
             if (isset($_FILES) && ($_FILES['profile_pictfile']['size'] > 0))
