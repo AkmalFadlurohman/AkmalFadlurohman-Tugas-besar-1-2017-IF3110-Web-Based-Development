@@ -31,6 +31,7 @@
 				$driverinfo_query = mysqli_query($con, "SELECT * FROM user JOIN (SELECT * FROM driver WHERE driver_id='" . $seldrv . "') AS drivert ON user_id = driver_id") or die(mysqli_error());
 				$driverinfo = mysqli_fetch_assoc($driverinfo_query);
 
+				echo $ppoint;
 				$driver_username = $driverinfo['username'];
 				$driver_name = $driverinfo['name'];
             ?>
@@ -53,7 +54,7 @@
 				Complete Order
 			</div>
 		</div>
-		<form id="submit_cmplt_ordr" method="post">
+		<form id="submit_cmplt_ordr" method="post" action="order_handler.php">
 			<div class="content" id="complete_order">
 				<h2>
 					How was it?
@@ -75,9 +76,14 @@
 				</div>
 				<div>
 					<textarea id="comment" name="comment" form="submit_cmplt_ordr">
-					
 					</textarea>
 				</div>
+
+				<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+				<input type="hidden" name="destination" value=<?php echo $dest ?>>
+				<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
+				<input type="hidden" name="customer" value=<?php echo $user_id ?>>
+
 				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
