@@ -49,7 +49,7 @@
 		                        		<td>
 					    					<p class='driver_username'>".$driver_name."</p>
 					    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
-					    					<div class='button green' onclick=''>
+					    					<div class='button green' onclick='chooseDriver()'>
 					    						I CHOOSE YOU
 					    					</div>
 		                        		</td>
@@ -83,7 +83,7 @@
 				Complete Order
 			</div>
 		</div>
-		<form method="post" action="complete_order.php">
+		<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
 			<div class="content" id="select_driver">
 				<div id="preferred_driver">
 					<h2>Preferred driver</h2>
@@ -92,11 +92,12 @@
 				<div id="other_driver">
 					<h2>Other drivers</h2>
 				</div>
-				<input type="hidden" name="selected_driver">
-				<input type="submit" name="submit_select_drv" style="display: none;">
+				<input type="hidden" name="selected_driver" id="selected_driver">
+				<!-- <input type="submit" name="submit_select_drv" id="submit_select_drv" style="display: none;"> -->
 			</div>
 		</form>
 		<?php mysqli_close($con) ?>
 	</div>
 </body>
+
 </html>
