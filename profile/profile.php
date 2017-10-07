@@ -48,7 +48,12 @@
                                 $getDriver = mysqli_fetch_assoc($query);
                                 $driver_score = $getDriver['total_score'];
                                 $driver_votes = $getDriver['votes'];
-                                $rating = $driver_score / $driver_votes;
+
+                                if ($driver_votes != 0) {
+                                    $rating = $driver_score / $driver_votes;
+                                } else {
+                                    $rating = 0;
+                                }
                                 echo '<script>document.getElementById("driver_rating").innerHTML = '.$rating.';</script>';
                                 echo '<script>document.getElementById("driver_votes").innerHTML = '.$driver_votes.';</script>';
                             }
