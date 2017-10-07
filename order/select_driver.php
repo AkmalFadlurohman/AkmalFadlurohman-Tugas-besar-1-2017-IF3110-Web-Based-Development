@@ -154,7 +154,6 @@
 
 			<div id="driver_table_container">
 				<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
-					<?php echo $ppoint . $dest; ?>
 				
 					<div class="content" id="select_driver">
 						<div id="preferred_driver">
