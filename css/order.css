@@ -92,7 +92,9 @@ div.step_name {
 	height: 20px;
 }
 
-.content input[type=submit]#loc_button {
+.content #loc_button {
+	text-align: center;
+	vertical-align: middle;
 	position: absolute;
 	margin: 10px;
 	left: 45%;
