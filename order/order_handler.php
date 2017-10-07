@@ -7,6 +7,7 @@
 	$dest_city = $_POST['destination'];
 	$score = $_POST['rating'];
 	$comment = $_POST['comment'];
+    date_default_timezone_set('Asia/Jakarta');
 	$date =  date_create() -> format("Y-m-d");
 
 	$insert_order_query = mysqli_query($con, "
