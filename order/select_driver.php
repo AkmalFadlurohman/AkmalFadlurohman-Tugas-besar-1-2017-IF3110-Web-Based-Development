@@ -31,7 +31,7 @@
 				function ShowPrefDrv($prefdrv, $con)
 				{
 					if (!(is_null($prefdrv))) {
-						$pdQuery = mysqli_query($con, "SELECT * FROM driver NATURAL JOIN user WHERE name='$prefdrv'") or die(mysqli_error($con));
+						$pdQuery = mysqli_query($con, "SELECT * FROM driver INNER JOIN user ON driver_id = user_id WHERE name='$prefdrv'") or die(mysqli_error($con));
 
 						while ($row = mysqli_fetch_assoc($pdQuery)) {
 							$driver_id = $row['driver_id'];
