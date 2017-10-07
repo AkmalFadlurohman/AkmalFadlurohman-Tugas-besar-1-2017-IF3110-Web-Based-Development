@@ -59,7 +59,7 @@
 					How was it?
 				</h2>
 				<div>
-					<img class='driver_pict' src='../profile/getProfilePict.php?id='.<?php $user_id?>>
+					<img class='driver_pict' src='../profile/getProfilePict.php?id='.<?php $user_id ?>."'">
 					<p> @<?php echo $driver_username;?></p>
 					<p> <?php echo $driver_name;?></p>
 				</div>
@@ -88,6 +88,7 @@
 	var star4 = document.getElementById('4-star');
 	var	star5 = document.getElementById('5-star');
 
+	star1.
 
 </script>
 </html>
