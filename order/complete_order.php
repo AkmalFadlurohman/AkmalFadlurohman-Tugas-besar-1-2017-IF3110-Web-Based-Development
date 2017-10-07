@@ -42,23 +42,12 @@
 				Complete Order
 			</div>
 		</div>
-		<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
-			<div class="content" id="select_destination">
-				<div>
-					<div>
-						<span>Picking point</span>
-						<input type="text" name="picking_point">
-					</div>
-					<div>
-						<span>Destination</span>
-						<input type="text" name="destination">
-					</div>
-					<div>
-						<span>Preferred driver</span>
-						<input type="text" name="preferred_driver">
-					</div>
-				</div>
-				<input type="submit" name="submit_select_loc" class="button green">
+		<form method="post">
+			<div class="content" id="complete_order" style="display: none;">
+				<h2>
+					How was it?
+				</h2>
+				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
 	</div>

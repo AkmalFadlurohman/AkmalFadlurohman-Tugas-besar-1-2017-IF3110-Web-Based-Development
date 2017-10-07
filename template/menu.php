@@ -1,6 +1,6 @@
 <?php
     echo '
-    <a href="../order/order.php?id='. $user_id .'" name="order_link">
+    <a href="../order/select_location.php?id='. $user_id .'" name="order_link">
 	<div class="menu" id="order_link">
 		<h3>ORDER</h3>
 	</div>
