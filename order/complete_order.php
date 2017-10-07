@@ -80,36 +80,31 @@
 			<form id="submit_cmplt_ordr" method="post" action="order_handler.php">
 				<div class="content" id="complete_order">
 					<h2>How was it?</h2>
-					<div id="left_complete">
-						<div id="driver_profile">
-							<?php echo "
-							<img class='driver_pict' src='../profile/getProfilePict.php?id=".$seldrv."'>"
-							;?>
-							<p> @<?php echo $driver_username;?></p>
-							<p> <?php echo $driver_name;?></p>
-						</div>
-						<div class="rating_bar" style="background-color: rgba(0,255,0,0.2);">
-							<span class="star" id="1-star" onclick="rate1()">&starf;</span>
-							<span class="star" id="2-star" onclick="rate2()">&starf;</span>
-							<span class="star" id="3-star" onclick="rate3()">&starf;</span>
-							<span class="star" id="4-star" onclick="rate4()">&starf;</span>
-							<span class="star" id="5-star" onclick="rate5()">&starf;</span>
-							<input type="hidden" name="rating" id="rating">
-						</div>
+					<div id="driver_profile">
+						<?php echo "
+						<img class='driver_pict' src='../profile/getProfilePict.php?id=".$seldrv."'>"
+						;?>
+						<p> @<?php echo $driver_username;?></p>
+						<p> <?php echo $driver_name;?></p>
+					</div>
+					<div class="rating_bar" style="background-color: rgba(0,255,0,0.2);">
+						<span class="star" id="1-star" onclick="rate1()">&starf;</span>
+						<span class="star" id="2-star" onclick="rate2()">&starf;</span>
+						<span class="star" id="3-star" onclick="rate3()">&starf;</span>
+						<span class="star" id="4-star" onclick="rate4()">&starf;</span>
+						<span class="star" id="5-star" onclick="rate5()">&starf;</span>
+						<input type="hidden" name="rating" id="rating">
+					</div>
+					<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="35" placeholder="Your comment..."></textarea>
+					<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+					<input type="hidden" name="destination" value=<?php echo $dest ?>>
+					<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
+					<input type="hidden" name="customer" value=<?php echo $user_id ?>>
+
+					<div id="finish_button_container">
+						<input id="finish_button" class="button green" type="submit" name="submit" value="Complete Order">
 					</div>
 
-					<div id="right_complete">
-						<div>
-							<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="27" placeholder="Your comment..."></textarea>
-						</div>
-
-						<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
-						<input type="hidden" name="destination" value=<?php echo $dest ?>>
-						<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
-						<input type="hidden" name="customer" value=<?php echo $user_id ?>>
-
-						<input class="button green" type="submit" name="submit" value="Complete Order">
-					</div>
 				</div>
 			</form>
 			<?php mysqli_close($con); ?>

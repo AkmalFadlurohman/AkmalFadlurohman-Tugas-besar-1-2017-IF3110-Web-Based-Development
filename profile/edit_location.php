@@ -1,3 +1,4 @@
+<?php $user_id = $_GET['id']; ?>
 <html>
 <head>
 <title>U Wanna Call Me Beibh?</title>
@@ -43,11 +44,16 @@
                 return false;
             }
         }
+        function confirmDelete(url) {
+            var retVal = confirm("Are you sure you want to delete this preferred location?");
+            if (retVal == true) {
+                window.open(url,"_self");
+            }
+        }
     </script>
     <div class="frame">
         <div class="header">
         <?php
-            $user_id = $_GET['id'];
             include '../database/dbconnect.php';
     
             $query=mysqli_query($con,"SELECT * FROM user WHERE user_id='".$user_id."'") or die(mysqli_error());
@@ -103,7 +109,7 @@
                                                         <input type="hidden" name="user_id" value="'.$user_id.'">
                                                     </form>
                                                 </div>
-                                                <div class="delete_button" id='.'delete_prefloc'.$i.'><a href=updateLocation.php?id='.urlencode($user_id).'&loc='.urlencode($row['pref_loc']).'>✖</a></div>
+                                                <div class="delete_button" id='.'delete_prefloc'.$i.' onClick="confirmDelete(\'updateLocation.php?id='.urlencode($user_id).'&loc='.urlencode($row['pref_loc']).'\');">✖</div>
                                                 <div class="cancel_button" id='.'cancel_edit'.$i.' style="display: none;" onClick="hideEdit(\'edit_prefloc'.$i.'\',\'save_prefloc'.$i.'\',\'prefloc'.$i.'\',\'form_prefloc'.$i.'\',\'delete_prefloc'.$i.'\',\'cancel_edit'.$i.'\');">Cancel</div>
                                             </div>
                                         </td>

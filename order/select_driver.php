@@ -51,7 +51,7 @@
 			                        		</td>
 			                        		<td class='driver_column'>
 						    					<p class='driver_username'>".$driver_name."</p>
-						    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
+						    					<p class='driver_rating'><span style='color: orange'>&starf;".$driver_rating."</span> (".$driver_votes." votes)</p>
 						    					<div class='choose_driver green' onclick='chooseDriver(".$driver_id.")'>
 						    						I CHOOSE YOU
 						    					</div>
@@ -98,7 +98,7 @@
 		                        		</td>
 		                        		<td class='driver_column'>
 					    					<p class='driver_username'>".$driver_name."</p>
-					    					<p class='driver_rating'>&starf;".$driver_rating." (".$driver_votes." votes)</p>
+					    					<p class='driver_rating'><span>&starf;".$driver_rating."</span> (".$driver_votes." votes)</p>
 					    					<div class='choose_driver green' onclick='chooseDriver(".$driver_id.")'>
 					    						I CHOOSE YOU
 					    					</div>
