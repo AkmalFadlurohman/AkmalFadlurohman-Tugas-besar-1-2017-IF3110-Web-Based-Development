@@ -35,7 +35,7 @@
             <div class="subheader">
                 <div class="title"><h1>My Profile</h1></div>
             </div>
-            <form name="edit_identity" method="POST" action="updateProfile.php" enctype="multipart/form-data">
+            <form name="edit_identity" method="POST" action="updateProfile.php" onsubmit="return validateForm();" enctype="multipart/form-data">
                 <div class="change_profilepict">
                     <div class="current_pict_frame">
                         <img id="current_profile_pict" src="../img/default_profile.jpeg">
@@ -96,6 +96,18 @@
         function showFileName(inputFile) {
             var arrTemp = inputFile.value.split('\\');
             document.getElementById("file_name").value = arrTemp[arrTemp.length - 1];
+        }
+        function validateForm() {
+            if (document.edit_identity.current_name.value == null || document.edit_identity.current_name.value == "") {
+                window.alert("Name can't be blank");
+                return false;
+            } else if (document.edit_identity.current_phone.value == null || document.edit_identity.current_phone.value == "") {
+                window.alert("Phone can't be blank");
+                return false;
+            } else if (document.edit_identity.current_phone.value.length < 9 || document.edit_identity.current_phone.value.length > 12) {
+                window.alert("Phone number should be 9 to 12 characters long");
+                return false;
+            }
         }
     </script>
 </body>

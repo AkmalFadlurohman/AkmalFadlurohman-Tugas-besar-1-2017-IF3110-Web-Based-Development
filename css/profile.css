@@ -110,6 +110,7 @@
 }
 .save {
     width: 50px;
+    cursor: pointer;
 }
 #profile_link {
     background-color: #465d43;
