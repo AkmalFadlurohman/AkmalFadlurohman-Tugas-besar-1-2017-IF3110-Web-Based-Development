@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/history.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    
+    <script type="text/javascript" src="format_date.js"></script>
 </head>
 <body>
 	<div class="frame">
@@ -34,7 +36,7 @@
         		<div class="title"><h1>Transaction History</h1></div>
         	</div>
 
-    		<ul class="page_menu">
+    		<ul class="nav_bar" id="history_nav">
     			<li>
     				<a class="history_menu" href=<?php echo 'transaction_history.php?id='.$user_id; ?>>
 						<h3>MY PREVIOUS ORDER</h3>
@@ -60,11 +62,17 @@
 
                             if(mysqli_num_rows($query_order)!=0)
                             {
+                                $i = 1;
                                 while($row=mysqli_fetch_assoc($query_order)) {
                                     $driver_query=mysqli_query($con,"SELECT username FROM user WHERE user_id='".$row['cust_id']."'") or die(mysqli_error());
                                     $driver_row=mysqli_fetch_assoc($driver_query);
                                     $driver_name=$driver_row['username'];
                                     $given_score=(int)$row['score'];
+
+                                    echo 
+                                        '<script>
+                                            var order_date = new Date("'.$row['date'].'");
+                                        </script>';
 
                                     echo
                                         "<tr>
@@ -73,7 +81,10 @@
                                                 <button class='hide_hist_button' type='button' value='hide' onclick='hide_row(this)'>Hide</button>
                                             </td>
                                             <td class='order_data'> 
-                                                <p class='history_date'>".$row['date']."</p>
+                                                <p class='history_date' id='row".$i."'></p>
+                                                <script>
+                                                    document.getElementById('row".$i."').innerHTML=format_date(order_date);
+                                                </script>
                                                 <p class='history_username'>".$driver_name."</p>
                                                 <p class='history_loc'>".$row['pick_city']." - ".$row['dest_city']."</p>
                                                 <p class='history_rating'>gave <span class='yellow_score'>&nbsp&nbsp".$given_score."&nbsp</span> stars for this order</p>
@@ -81,6 +92,8 @@
                                                 <p class='history_comment' style='margin-left: 30px;'>".$row['comment']."</p>
                                             </td>
                                         </tr>";
+
+                                        $i++;
                                 }
                             }
                             mysqli_close($con);
@@ -90,7 +103,6 @@
             </div>
         </div>
 	</div>
+    <script type="text/javascript" src="hide_history.js"></script>
 </body>
 </html>
-
-<script type="text/javascript" src="hide_history.js"></script>
