@@ -13,6 +13,12 @@ Dibuat oleh:
 2. Muhammad Umar Fariz Tumbuan 	(13515050)
 3. Akmal Fadlurohman			(13515074)
 
+## Cara menggunakan
+1. Download repository ke folder root sebuah web server. Kami menggunakan XAMPP
+2. Aktifkan Apache dan MySQL
+3. Import file basis data ke MySQLO. File directory: "database/PR-Ojek.sql"
+4. Website siap dijalankan.
+
 ## Spesifikasi
 
 ### Login
