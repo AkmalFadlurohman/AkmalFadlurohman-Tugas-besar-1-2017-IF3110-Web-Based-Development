@@ -74,7 +74,6 @@ Pada halaman ini, ditampilkan driver-driver yang tersedia dan dapat mengambil or
 ### History
 
 ![](mocks/previous_order.JPG)
-
 ![](mocks/driver_history.JPG)
 
 Pada halaman history, terdapat dua tab, yaitu History Penumpang dan History Driver. History Penumpang menampilkan daftar order yang pernah diambil pengguna sebagai penumpang, dan History Driver menampilkan daftar order yang pernah diambil pengguna sebagai driver.
