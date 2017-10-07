@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>U Wanna Call Me Beibh?</title>
+	<title>Complete Your Order</title>
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
 	<link rel="stylesheet" type="text/css" href="../css/order.css">
 	<link rel="stylesheet" type="text/css" href="../css/header.css">

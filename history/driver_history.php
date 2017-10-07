@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>driver history</title>
+	<title>Driver History</title>
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/history.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">

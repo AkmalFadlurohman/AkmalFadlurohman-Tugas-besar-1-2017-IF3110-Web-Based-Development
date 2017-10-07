@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>U Wanna Call Me Beibh?</title>
+<title>Edit Location</title>
     <link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/location.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
