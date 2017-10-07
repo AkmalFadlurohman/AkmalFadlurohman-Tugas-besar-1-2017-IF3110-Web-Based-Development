@@ -98,9 +98,10 @@ a:hover {
 }
 
 .profile_pict_frame {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     overflow: auto;
+    border: 5px solid #333333;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;

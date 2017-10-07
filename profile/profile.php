@@ -36,15 +36,24 @@
                 </div>
                 <div class="profile_data_container">
                     <?php
-                        echo "</br><p><strong>".$row['username']."</strong></p>";
+                        echo "<div class='username_display'><strong>".$row['username']."</strong></div>";
                         echo "<p>".$row['name']."</p>";
                         if ($row['status'] == "driver") {
-                            echo "<p>Driver | <span id='driver_rating'>Rating (xxx Votes)</span></p>";
+                            echo "<p>Driver | <span style='color : #f9880e'>☆<span id='driver_rating'>Rating</span></span> (<span id='driver_votes'>(xxx Votes)</span> votes)</p>";
+                            $query=mysqli_query($con,"SELECT * FROM driver WHERE driver_id='".$user_id."'") or die(mysqli_error());
+                            if (mysqli_num_rows($query) != 0) {
+                                $getDriver = mysqli_fetch_assoc($query);
+                                $driver_score = $getDriver['total_score'];
+                                $driver_votes = $getDriver['votes'];
+                                $rating = $driver_score / $driver_votes;
+                                echo '<script>document.getElementById("driver_rating").innerHTML = '.$rating.';</script>';
+                                echo '<script>document.getElementById("driver_votes").innerHTML = '.$driver_votes.';</script>';
+                            }
                         } else {
                             echo "<p>Non-Driver</p>";
                         }
-                        echo "<p>".$row['email']."</p>";
-                        echo "<p>".$row['phone']."</p>";
+                        echo "<p>✉".$row['email']."</p>";
+                        echo "<p>☏".$row['phone']."</p>";
                         if (isset($row['pict'])) {
                             echo "<script>document.getElementById('profile_pict').src ='getProfilePict.php?id=".$user_id."'</script>";
                         }
