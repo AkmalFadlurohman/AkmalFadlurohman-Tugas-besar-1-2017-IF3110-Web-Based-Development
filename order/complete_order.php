@@ -39,55 +39,82 @@
 		<div class="menu_container">
 			<?php include'../template/menu.php';?>
 		</div>
+		<script>
+        	document.getElementById("order_link").setAttribute("class", "menu menu_active");
+        </script>
 
-		<h1>Make an Order</h1>
-		<div class="submenu_container">
-			<div class="submenu left">
-				Select Destination
-			</div>
-		
-			<div class="submenu mid">
-				Select a Driver
+		<div class="order_container">
+			<div class="subheader">
+        		<div class="title"><h1>Make an Order</h1></div>
+        	</div>
+			<div class="submenu_container">
+				<div class="submenu left">
+					<div class="step_num">
+						<p>1</p>
+					</div>
+					<div class="step_name">
+						<p>Select Destination</p>
+					</div>
+				</div>
+			
+				<div class="submenu mid">
+					<div class="step_num">
+						<p>2</p>
+					</div>
+					<div class="step_name">
+						<p>Select a Driver</p>
+					</div>
+				</div>
+
+				<div class="submenu right submenu_active">
+					<div class="step_num">
+						<p>3</p>
+					</div>
+					<div class="step_name">
+						<p>Complete Order</p>
+					</div>
+				</div>
 			</div>
 
-			<div class="submenu right">
-				Complete Order
-			</div>
+
+			<form id="submit_cmplt_ordr" method="post" action="order_handler.php">
+				<div class="content" id="complete_order">
+					<h2>How was it?</h2>
+					<div id="left_complete">
+						<div id="driver_profile">
+							<?php echo "
+							<img class='driver_pict' src='../profile/getProfilePict.php?id=".$seldrv."'>"
+							;?>
+							<p> @<?php echo $driver_username;?></p>
+							<p> <?php echo $driver_name;?></p>
+						</div>
+						<div class="rating_bar" style="background-color: rgba(0,255,0,0.2);">
+							<span class="star" id="1-star" onclick="rate1()">&starf;</span>
+							<span class="star" id="2-star" onclick="rate2()">&starf;</span>
+							<span class="star" id="3-star" onclick="rate3()">&starf;</span>
+							<span class="star" id="4-star" onclick="rate4()">&starf;</span>
+							<span class="star" id="5-star" onclick="rate5()">&starf;</span>
+							<input type="hidden" name="rating" id="rating">
+						</div>
+					</div>
+
+					<div id="right_complete">
+						<div>
+							<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="27">
+							</textarea>
+						</div>
+
+						<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+						<input type="hidden" name="destination" value=<?php echo $dest ?>>
+						<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
+						<input type="hidden" name="customer" value=<?php echo $user_id ?>>
+
+						<input class="button green" type="submit" name="submit" value="Complete Order">
+					</div>
+				</div>
+			</form>
+			<?php mysqli_close($con); ?>
 		</div>
-		<form id="submit_cmplt_ordr" method="post" action="order_handler.php">
-			<div class="content" id="complete_order">
-				<h2>
-					How was it?
-				</h2>
-				<div>
-					<?php echo "
-					<img class='driver_pict' src='../profile/getProfilePict.php?id=".$seldrv."'>"
-					;?>
-					<p> @<?php echo $driver_username;?></p>
-					<p> <?php echo $driver_name;?></p>
-				</div>
-				<div class="rating_bar">
-					<span class="star" id="1-star" onclick="rate1()">&starf;</span>
-					<span class="star" id="2-star" onclick="rate2()">&starf;</span>
-					<span class="star" id="3-star" onclick="rate3()">&starf;</span>
-					<span class="star" id="4-star" onclick="rate4()">&starf;</span>
-					<span class="star" id="5-star" onclick="rate5()">&starf;</span>
-					<input type="hidden" name="rating" id="rating">
-				</div>
-				<div>
-					<textarea id="comment" name="comment" form="submit_cmplt_ordr">
-					</textarea>
-				</div>
-
-				<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
-				<input type="hidden" name="destination" value=<?php echo $dest ?>>
-				<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
-				<input type="hidden" name="customer" value=<?php echo $user_id ?>>
-
-				<input class="button green" type="submit" name="submit" value="Complete Order">
-			</div>
-		</form>
-		<?php mysqli_close($con); ?>
 	</div>
 </body>
 <script type="text/javascript">

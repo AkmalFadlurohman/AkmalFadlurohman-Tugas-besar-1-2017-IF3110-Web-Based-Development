@@ -68,18 +68,18 @@
 			<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
 				<div class="content" id="select_destination">
 					<div>
-						<span>Picking point</span>
+						<span class="loc_form_label">Picking point</span>
 						<input type="text" name="picking_point">
 					</div>
 					<div>
-						<span>Destination</span>
+						<span class="loc_form_label">Destination</span>
 						<input type="text" name="destination">
 					</div>
 					<div>
-						<span>Preferred driver</span>
+						<span class="loc_form_label">Preferred driver</span>
 						<input type="text" name="preferred_driver">
 					</div>
-					<input type="submit" name="submit_select_loc" class="button green" value="Next">
+					<input type="submit" name="submit_select_loc" class="button green" id="loc_button" value="Next">
 				</div>
 			</form>
 		</div>

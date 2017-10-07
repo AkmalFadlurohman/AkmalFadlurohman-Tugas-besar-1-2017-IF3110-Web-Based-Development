@@ -81,7 +81,7 @@ div.step_name {
 	margin-bottom: 10px;
 }
 
-.content span {
+.content span.loc_form_label {
 	width: 30%;
 	margin-right: auto;
 	float: left;
@@ -92,7 +92,7 @@ div.step_name {
 	height: 20px;
 }
 
-.content input[type=submit] {
+.content input[type=submit]#loc_button {
 	position: absolute;
 	margin: 10px;
 	left: 45%;
@@ -105,9 +105,27 @@ div.step_name {
 	margin: 7px 0;
 }
 
+div h2 {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
 .star {
-	size: 300%;
+	font-size: 30px;
 	color: yellow;
+
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+div.rating_bar {
+	height: auto;
+	vertical-align: top;
+	border-radius: 20px;
 }
 
 #order_link {
@@ -169,4 +187,31 @@ div.choose_driver {
 	width: 50%;
 	text-align: center;
 	padding: 5px;
+}
+
+div#driver_profile {
+	margin: 0;
+	padding-top: 10px;
+	text-align: center;
+}
+
+div#driver_profile p {
+	padding: 0;
+	margin: 0;
+}
+
+div#complete_order {
+	text-align: center;
+}
+
+div#left_complete {
+	margin-top: 5px;
+	width: 40%;
+	float: left;
+}
+
+div#right_complete {
+	margin-top: 20px;
+	width: 60%;
+	float: right;
 }
