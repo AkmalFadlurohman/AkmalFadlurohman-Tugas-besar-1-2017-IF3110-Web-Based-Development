@@ -27,7 +27,6 @@
                 $ppoint = $_POST['picking_point'];
 				$dest = $_POST['destination'];
 				$prefdrv = $_POST['preferred_driver'];
-				echo $prefdrv;
 				
 				function ShowPrefDrv($prefdrv, $con)
 				{
@@ -36,7 +35,7 @@
 
 						while ($row = mysqli_fetch_assoc($pdQuery)) {
 							$driver_id = $row['driver_id'];
-							$driver_name = $row['username'];
+							$driver_name = $row['name'];
 							$driver_votes = $row['votes'];
 							$driver_rating = ($driver_votes == 0) ? 0 : $row['total_score']/$row['votes'];
 							echo 
@@ -44,7 +43,7 @@
 								<table id='tbl_pref_driver'>
 									<tr>
 		                        		<td>
-		                        			<img class='history_pict' src='../profile/getProfilePict.php?id=".$driver_id."'
+		                        			<img class='driver_pict' src='../profile/getProfilePict.php?id=".$driver_id."'
 		                        		</td>
 		                        		<td>
 					    					<p class='driver_username'>".$driver_name."</p>
@@ -84,6 +83,7 @@
 			</div>
 		</div>
 		<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
+			<?php echo $ppoint . $dest; ?>
 			<div class="content" id="select_driver">
 				<div id="preferred_driver">
 					<h2>Preferred driver</h2>
@@ -92,8 +92,9 @@
 				<div id="other_driver">
 					<h2>Other drivers</h2>
 				</div>
+				<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+				<input type="hidden" name="destination" value=<?php echo $dest?>>
 				<input type="hidden" name="selected_driver" id="selected_driver">
-				<!-- <input type="submit" name="submit_select_drv" id="submit_select_drv" style="display: none;"> -->
 			</div>
 		</form>
 		<?php mysqli_close($con) ?>

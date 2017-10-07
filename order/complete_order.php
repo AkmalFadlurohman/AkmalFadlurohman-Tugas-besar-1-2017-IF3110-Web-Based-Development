@@ -22,6 +22,12 @@
                     include("../template/header.php");
                 }
                 mysqli_close($con);
+
+                //==================================================
+
+                $ppoint = $_POST['picking_point'];
+				$dest = $_POST['destination'];
+				$seldrv = $_POST['selected_driver'];
             ?>
 		</div>
 		<div class="menu_container">
@@ -43,10 +49,12 @@
 			</div>
 		</div>
 		<form method="post">
-			<div class="content" id="complete_order" style="display: none;">
+			<div class="content" id="complete_order">
 				<h2>
 					How was it?
 				</h2>
+				<img class='driver_pict' src='../profile/getProfilePict.php?id='.<?php $user_id?>>
+				<p> @<?php echo $ppoint.$dest;?></p>
 				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
