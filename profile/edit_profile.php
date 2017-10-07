@@ -33,7 +33,7 @@
         </div>
         <div class="edit_profile_container">
             <div class="subheader">
-                <div class="title"><h1>My Profile</h1></div>
+                <div class="title"><h1>Edit Profile</h1></div>
             </div>
             <form name="edit_identity" method="POST" action="updateProfile.php" onsubmit="return validateForm();" enctype="multipart/form-data">
                 <div class="change_profilepict">
