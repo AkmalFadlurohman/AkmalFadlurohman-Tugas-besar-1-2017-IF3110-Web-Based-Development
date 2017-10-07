@@ -1,4 +1,3 @@
-<?php $user_id = $_GET['id']; ?>
 <html>
 <head>
 <title>U Wanna Call Me Beibh?</title>
@@ -54,6 +53,7 @@
     <div class="frame">
         <div class="header">
         <?php
+            $user_id = $_GET['id'];
             include '../database/dbconnect.php';
     
             $query=mysqli_query($con,"SELECT * FROM user WHERE user_id='".$user_id."'") or die(mysqli_error());

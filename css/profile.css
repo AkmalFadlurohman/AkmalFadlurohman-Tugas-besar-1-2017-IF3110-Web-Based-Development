@@ -32,6 +32,7 @@
 .prefloc_container {
     height: 50%;
     margin-top : 0%;
+    overflow-y : scroll;
 }
 .prefloc_list ul {
     list-style-type: none;
