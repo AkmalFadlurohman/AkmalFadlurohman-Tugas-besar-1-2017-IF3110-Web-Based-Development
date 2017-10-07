@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/history.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <script type="text/javascript" src="hide_history.js">
+    </script>
+}
 </head>
 <body>
 	<div class="frame">
@@ -25,6 +28,9 @@
 		</div>
 		<div class="menu_container">
             <?php include'../template/menu.php';?>
+            <script>
+            	document.getElementById("history_link").setAttribute("class", "menu menu_active");
+            </script>
         </div>
         <div class="history_container">
         	<div class="subheader">
@@ -63,7 +69,8 @@
 		                            echo
 		                            	"<tr>
 		                            		<td>
-		                            			<img class='history_pict' src='../profile/getProfilePict.php?id=".$row['driver_id']."'
+		                            			<img class='history_pict' src='../profile/getProfilePict.php?id=".$row['driver_id']."'>
+		                            			<button class='hide_hist_button' type='button' value='hide' onclick='hide_row(this)'>Hide</button>
 		                            		</td>
 		                            		<td>
 		                            			<p class='history_date'>".$row['date']."</p>
@@ -85,3 +92,5 @@
 	</div>
 </body>
 </html>
+
+<script type="text/javascript" src="hide_history.js"></script>

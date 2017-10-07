@@ -1,7 +1,6 @@
 .history_container {
     margin-top: 10%;
     height: 79%;
-    border: 1px solid red; /*OJO LALI HAPUS IKI*/
 }
 
 .history_container .subheader {
@@ -31,7 +30,6 @@
     font-family: calibri;
 
 	position: relative;;
-	border: 0.5px solid black;
 	display: block;
 
 	text-decoration: none;
@@ -48,9 +46,7 @@
 
 table.history_table {
 	margin-top: 5px;
-	border: 1px solid blue; /*OJO LALI HAPUS IKI*/
 	width: 100%;
-	border: 1px solid purple;
     padding: 0;
     border-collapse: collapse;
 }
@@ -89,7 +85,6 @@ p.history_comment {
 }
 
 table.history_table th, td {
-	border: 1px solid purple;
     padding: 5px;
     border-collapse: collapse;
 }
@@ -105,4 +100,11 @@ img.history_pict {
     display: inline;
     margin: 0;
     
+}
+
+.hide_hist_button {
+	margin: 0;
+	color: white;
+	background-color: red;
+	font-size: 9px;
 }
