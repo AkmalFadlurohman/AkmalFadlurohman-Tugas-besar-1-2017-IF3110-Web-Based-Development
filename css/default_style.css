@@ -7,6 +7,7 @@ body {
     width: 360px;
     height: 550px;
 	margin: 50px auto;
+    padding: 5px 20px;
     padding-right: 20px;
     padding-left: 20px;
     border-top: 0.5px solid black;
@@ -81,14 +82,13 @@ a:hover {
 }
 
 .menu_container {
-    background-color: red; 
     width: 360px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 15px auto 5px auto;
 }
 
 .subheader {
     height: 15%;
+    margin-bottom: 10px;
 }
 .title {
     float: left;
@@ -112,4 +112,20 @@ a:hover {
     margin: 0 auto;
     height: 100%;
     width: 100%;
+}
+
+ul.nav_bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: table;
+    width: inherit;
+}
+
+ul.nav_bar > li {
+    display: table-cell;
+}
+
+#main_nav_bar.nav_bar > li {
 }

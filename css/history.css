@@ -1,5 +1,4 @@
 .history_container {
-    margin-top: 10%;
     height: 79%;
 }
 
@@ -9,19 +8,6 @@
 
 .history_container > * {
 	
-}
-
-.page_menu {
-    list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
-.page_menu > li {
-	width: 50%;
-	display: inline;
-	float: left;
 }
 
 .history_menu {
@@ -52,8 +38,9 @@ table.history_table {
 }
 
 table.history_table p {
-	margin: 0;
+	margin: 0 0 5px 0;
 	padding: 0;
+	font-size: 12px;
 	font-style: "Lucida Console", Monaco, monospace;
 }
 
@@ -61,35 +48,22 @@ td.history_column {
 	padding: 2px 0 0 8px;
 }
 
-p.history_date {
-	font-size: 14px;
+table.history_table p.history_date {
 	color: grey;
 	font-weight: bold;
 }
 
-p.history_username {
+table.history_table p.history_username {
 	font-size: 20px;
 	font-weight: bold;
 }
 
-p.history_loc {
-	font-size: 14px;
-}
-
-p.history_rating {
-	font-size: 14px;
-}
-
-p.history_comment {
-	font-size: 14px;
-}
-
 table.history_table th, td {
-    padding: 5px;
+    padding: 0 5px;
     border-collapse: collapse;
 }
 
-p.history_table td {
+table.history_table tr td.order_data {
 	vertical-align: top;
 }
 
@@ -99,12 +73,30 @@ img.history_pict {
     border-radius: 50%;
     display: inline;
     margin: 0;
-    
 }
 
-.hide_hist_button {
+button.hide_hist_button {
 	margin: 0;
 	color: white;
 	background-color: red;
 	font-size: 9px;
+	margin-bottom: 45px;
+}
+
+.checked {
+	color:orange
+}
+
+.yellow_score {
+	font-size: 20px;
+	color: orange;
+	vertical-align: middle;
+}
+
+ul#history_nav.nav_bar > li {
+	width: 50%;
+}
+	
+ul#history_nav {
+	margin-bottom: 7px;
 }

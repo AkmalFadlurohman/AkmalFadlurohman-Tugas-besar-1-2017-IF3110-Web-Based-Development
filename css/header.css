@@ -23,3 +23,8 @@
     margin: 0 ;
     margin-top: 10px;
 }
+
+div.greeting a, div.greeting a:link, div.greeting a:visited {
+    color: blue;
+    text-decoration: underline;
+}

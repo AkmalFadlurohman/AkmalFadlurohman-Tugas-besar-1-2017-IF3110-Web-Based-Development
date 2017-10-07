@@ -1,6 +1,6 @@
 <?php
     echo '<div class="logo">
-            <h1>OneHundred</h1>
+            <h1><span style="color: red;">One</span><span style="color: green;">Hundred</span></h1>
             <p>"An ojek for anything you need"</p></br>
             </div>
             <div class="greeting">

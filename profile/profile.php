@@ -34,9 +34,7 @@
                 <div class="edit_profile_button"><a href=<?php echo 'edit_profile.php?id='.$user_id; ?>>✎</a></div>
             </div>
             <div class="profile_info_container">
-                <div class="profile_pict_frame">
-                    <img id="profile_pict" src="../img/default_profile.jpeg">
-                </div>
+                <img class="profile_pict_frame" id="profile_pict" src="../img/default_profile.jpeg">
                 <div class="profile_data_container">
                     <?php
                         echo "<div class='username_display'><strong>".$row['username']."</strong></div>";
@@ -48,7 +46,12 @@
                                 $getDriver = mysqli_fetch_assoc($query);
                                 $driver_score = $getDriver['total_score'];
                                 $driver_votes = $getDriver['votes'];
-                                $rating = $driver_score / $driver_votes;
+
+                                if ($driver_votes != 0) {
+                                    $rating = $driver_score / $driver_votes;
+                                } else {
+                                    $rating = 0;
+                                }
                                 echo '<script>document.getElementById("driver_rating").innerHTML = '.$rating.';</script>';
                                 echo '<script>document.getElementById("driver_votes").innerHTML = '.$driver_votes.';</script>';
                             }
