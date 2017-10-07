@@ -84,7 +84,7 @@ Tugas ini dikerjakan bersama-sama dengan saling berdiskusi dan membantu. Pembagi
 5. Order - Complete order : 13515005, 13515050
 6. Profile : 13515074, 13515050, 13515005
 7. Edit profile : 13515074 13515050
-8. Edit preferred location : 13515074, 13515050
+8. Edit preferred location : 13515074
 9. Driver History : 13515050
 10. Transaction History : 13515050
 
