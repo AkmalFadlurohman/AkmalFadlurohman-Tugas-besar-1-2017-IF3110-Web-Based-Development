@@ -14,11 +14,7 @@
 		VALUES ('".$dest_city."', '".$pick_city."', '".$score."', '".$comment."', '".$driver_id."', '".$cust_id."', '".$date."')
 		") or die(mysqli_error($con));
 
-		header("Location : order.php");	
-	if ($insert_order_query) {
-	} else {
-		echo 'wrong hole';
-	}
-
 	mysqli_close($con);
+	
+	header("Location: order.php?id=$cust_id");	
 ?>
