@@ -31,7 +31,7 @@
                 $user_id=$row['user_id'];
                 
                 if ($status == "customer") {
-                    header("Location: ../order/order.php?id=$user_id");
+                    header("Location: ../order/select_location.php?id=$user_id");
                 } else {
                     $query = mysqli_query($con,"INSERT INTO driver (driver_id,total_score,votes) VALUES ('$user_id',0,0)") or die(mysqli_error($con));
                     if ($query) {
