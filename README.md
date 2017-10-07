@@ -67,7 +67,7 @@ Pada halaman ini, ditampilkan driver-driver yang tersedia dan dapat mengambil or
 
 ### History
 
-![](mocks/order_history.JPG)
+![](mocks/previous_order.JPG)
 
 ![](mocks/driver_history.JPG)
 
