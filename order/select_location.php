@@ -89,8 +89,6 @@
 	</div>
 </body>
 <script type="text/javascript">
-	window.alert('weo');
-
 	function checkValidity() {
 		var form = document.getElementById('submit_select_loc');
 		var PPfield = document.getElementById('picking_point');

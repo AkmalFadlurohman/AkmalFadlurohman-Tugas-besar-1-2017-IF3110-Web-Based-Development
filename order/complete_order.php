@@ -125,6 +125,8 @@
 	var	star5 = document.getElementById('5-star');
 	var rate = document.getElementById('rating');
 
+	rate3();
+
 	function rate1() {
 		rate.value = 1;
 		light1();
