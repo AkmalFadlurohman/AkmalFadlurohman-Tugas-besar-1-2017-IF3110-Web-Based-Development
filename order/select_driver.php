@@ -70,7 +70,14 @@
 
 				function ShowRegDrv($con, $user_id)
 				{
-					$rdQuery = mysqli_query($con, "SELECT * FROM driver INNER JOIN user ON driver_id = user_id") or die(mysqli_error($con));
+					$point = $GLOBALS['ppoint'];
+					$dst = $GLOBALS['dest'];
+
+					$rdQuery = mysqli_query($con, "
+						SELECT DISTINCT * FROM (driver_prefloc INNER JOIN user ON driver_prefloc.driver_id = user.user_id)
+						INNER JOIN driver ON driver.driver_id = user.user_id
+						WHERE pref_loc = '$point' OR pref_loc = '$dst' 
+						") or die(mysqli_error($con));
 
 					while ($row = mysqli_fetch_assoc($rdQuery)) {
 						$driver_id = $row['driver_id'];
