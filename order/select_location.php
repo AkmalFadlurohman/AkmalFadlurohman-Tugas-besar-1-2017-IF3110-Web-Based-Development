@@ -65,7 +65,7 @@
 			</div>
 
 
-			<form method="post" id="submit_select_loc" name="submit_select_loc" action=<?php echo "select_driver.php?id=" . $user_id;?> onsubmit="return checkValidity();">
+			<form method="post" id="submit_select_loc" name="submit_select_loc" action=<?php echo "select_driver.php?id=" . $user_id;?> onsubmit="return validateForm();">
 				<div class="content" id="select_destination">
 					<div>
 						<span class="loc_form_label">Picking point</span>
@@ -79,8 +79,8 @@
 						<span class="loc_form_label">Preferred driver</span>
 						<input type="text" name="preferred_driver" placeholder="(optional)">
 					</div>
-					<div class="button green" id="loc_button" onclick="checkValidity();">
-						Next
+					<div>
+						<input type="submit" value="Next" class="button green" id="loc_button">
 					</div>
 				</div>
 			</form>
@@ -88,18 +88,15 @@
 		
 	</div>
 </body>
-<script type="text/javascript">
-	function checkValidity() {
-		var form = document.getElementById('submit_select_loc');
-		var PPfield = document.getElementById('picking_point');
-		var Dfield = document.getElementById('destination');
-		var isValid = (PPfield.value == "" || Dfield.value == "") ? false : true;
-
-		if (!isValid) {
-			window.alert("Please fill both picking point and destination fields");
-		} else {
-			form.submit();
-		}
-	}
+    <script type="text/javascript">
+        function validateForm() {
+            if(document.submit_select_loc.picking_point.value == null || document.submit_select_loc.picking_point.value == "") {
+                window.alert("Please fill the picking location");
+                return false;
+            } else if (document.submit_select_loc.destination.value == null || document.submit_select_loc.destination.value == "") {
+                winddow.alert("Please fill the destination location");
+                return false;
+            }
+        }
 	</script>
 </html>
