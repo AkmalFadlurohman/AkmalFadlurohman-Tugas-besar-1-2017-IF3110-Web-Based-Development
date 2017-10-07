@@ -63,7 +63,7 @@
 					}
 					else
 					{
-						echo "<h2>Nothing to display :(</h2>";
+						echo "<h3>Nothing to display :(</h3>";
 					}
 				}
             ?>
