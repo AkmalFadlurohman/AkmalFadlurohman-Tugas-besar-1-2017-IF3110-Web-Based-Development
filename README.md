@@ -85,8 +85,8 @@ Tugas ini dikerjakan bersama-sama dengan saling berdiskusi dan membantu. Pembagi
 6. Profile : 13515074, 13515050
 7. Edit profile : 13515074 13515050
 8. Edit preferred location : 13515074, 13515050
-9. Driver History : 13515050, 13515050
-10. Transaction History : 13515050, 13515050
+9. Driver History : 13515050
+10. Transaction History : 13515050
 
 **Fungsionalitas**
 1. Login : 13515074
