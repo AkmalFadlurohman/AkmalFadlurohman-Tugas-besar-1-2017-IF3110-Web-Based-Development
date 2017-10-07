@@ -61,9 +61,13 @@
 #preferred_driver {
 }
 
+form#submit_cmplt_ordr div {
+	size: 
+}
+
 .star {
-	size: 300%;
-	color: yellow;
+	font-size: 50px;
+	color: gray;
 }
 
 #order_link {
