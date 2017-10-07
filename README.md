@@ -1,6 +1,9 @@
 # Tugas 1 IF3110 Pengembangan Aplikasi Berbasis Web
 
-Membuat sebuah Website Ojek Online
+Dibuat oleh:
+	- Husnulzaki Wibisono Haryadi 	(13515005)
+	- Muhammad Umar Fariz Tumbuan 	(13515050)
+	- Akmal Fadlurohman				(13515074)
 
 ## Deskripsi Singkat
 
