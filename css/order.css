@@ -61,6 +61,11 @@
 #preferred_driver {
 }
 
+.star {
+	size: 300%;
+	color: yellow;
+}
+
 #order_link {
     background-color: #465d43;
 }

@@ -28,8 +28,11 @@
 				$dest = $_POST['destination'];
 				$seldrv = $_POST['selected_driver'];
 
-				$driverinfo_query = mysqli_query($con, "SELECT * FROM driver WHERE driver_id ='".$seldrv."'") or die(mysqli_error());
+				$driverinfo_query = mysqli_query($con, "SELECT * FROM user JOIN (SELECT * FROM driver WHERE driver_id='" . $seldrv . "') AS drivert ON user_id = driver_id") or die(mysqli_error());
 				$driverinfo = mysqli_fetch_assoc($driverinfo_query);
+
+				$driver_username = $driverinfo['username'];
+				$driver_name = $driverinfo['name'];
             ?>
 		</div>
 		<div class="menu_container">
@@ -50,17 +53,41 @@
 				Complete Order
 			</div>
 		</div>
-		<form method="post">
+		<form id="submit_cmplt_ordr" method="post">
 			<div class="content" id="complete_order">
 				<h2>
 					How was it?
 				</h2>
-				<img class='driver_pict' src='../profile/getProfilePict.php?id='.<?php $user_id?>>
-				<p> @<?php echo $ppoint.$dest;?></p>
+				<div>
+					<img class='driver_pict' src='../profile/getProfilePict.php?id='.<?php $user_id?>>
+					<p> @<?php echo $driver_username;?></p>
+					<p> <?php echo $driver_name;?></p>
+				</div>
+				<div class="rating_bar">
+					<span class="star" id="1-star">&starf;</span>
+					<span class="star" id="2-star">&starf;</span>
+					<span class="star" id="3-star">&starf;</span>
+					<span class="star" id="4-star">&starf;</span>
+					<span class="star" id="5-star">&starf;</span>
+				</div>
+				<div>
+					<textarea id="comment" name="comment" form="submit_cmplt_ordr">
+					
+					</textarea>
+				</div>
 				<input class="button green" type="submit" name="submit" value="Complete Order">
 			</div>
 		</form>
 		<?php mysqli_close($con); ?>
 	</div>
 </body>
+<script type="text/javascript">
+	var star1 = document.getElementById('1-star');
+	var star2 = document.getElementById('2-star');
+	var star3 = document.getElementById('3-star');
+	var star4 = document.getElementById('4-star');
+	var	star5 = document.getElementById('5-star');
+
+
+</script>
 </html>
