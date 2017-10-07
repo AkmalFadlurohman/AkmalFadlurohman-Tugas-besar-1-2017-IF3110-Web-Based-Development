@@ -66,11 +66,11 @@
 					<p> <?php echo $driver_name;?></p>
 				</div>
 				<div class="rating_bar">
-					<span class="star" id="1-star" onclick="rate1()" onmouseover="light1()">&starf;</span>
-					<span class="star" id="2-star" onclick="rate2()" onmouseover="light2()">&starf;</span>
-					<span class="star" id="3-star" onclick="rate3()" onmouseover="light3()">&starf;</span>
-					<span class="star" id="4-star" onclick="rate4()" onmouseover="light4()">&starf;</span>
-					<span class="star" id="5-star" onclick="rate5()" onmouseover="light5()">&starf;</span>
+					<span class="star" id="1-star" onclick="rate1()">&starf;</span>
+					<span class="star" id="2-star" onclick="rate2()">&starf;</span>
+					<span class="star" id="3-star" onclick="rate3()">&starf;</span>
+					<span class="star" id="4-star" onclick="rate4()">&starf;</span>
+					<span class="star" id="5-star" onclick="rate5()">&starf;</span>
 					<input type="hidden" name="rating" id="rating">
 				</div>
 				<div>
