@@ -100,8 +100,7 @@
 
 					<div id="right_complete">
 						<div>
-							<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="27" placeholder="Your comment...">
-							</textarea>
+							<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="27" placeholder="Your comment..."></textarea>
 						</div>
 
 						<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
