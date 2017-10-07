@@ -22,8 +22,6 @@
                     include("../template/header.php");
                 }
 
-                //===========================================
-
                 $ppoint = $_POST['picking_point'];
 				$dest = $_POST['destination'];
 				$prefdrv = $_POST['preferred_driver'];
