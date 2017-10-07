@@ -45,8 +45,8 @@
     color: #f9880e;
 }
 .edit_profile_container {
-    margin-top: 10%;
-    overflow-y: scroll;
+    margin-top: 5px;
+    overflow-y: auto;
     height: 72%;
 }
 .change_profilepict {
@@ -109,6 +109,7 @@
 }
 .save {
     width: 50px;
+    cursor: pointer;
 }
 #profile_link {
     background-color: #465d43;

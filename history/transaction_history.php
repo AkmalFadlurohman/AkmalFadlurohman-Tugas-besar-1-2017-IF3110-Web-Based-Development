@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>transaction history</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/default_style.css">
     <link rel="stylesheet" type="text/css" href="../css/history.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -90,7 +89,7 @@
 						    					<p class='history_rating'>You rated: ";
 						    					
 						    					for ($i = 0; $i < $row['score']; $i++) {
-						    						echo "<span class='fa fa-star checked'></span>";
+						    						echo "<span style='color:orange'>&starf;</span>";
 						    					}
 
 						    		echo
