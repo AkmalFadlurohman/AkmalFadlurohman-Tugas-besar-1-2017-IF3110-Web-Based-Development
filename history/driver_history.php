@@ -25,6 +25,9 @@
 		</div>
 		<div class="menu_container">
             <?php include'../template/menu.php';?>
+            <script type="text/javascript">
+                document.getElementById("history_link").setAttribute("class", "menu menu_active");
+            </script>
         </div>
         <div class="history_container">
         	<div class="subheader">

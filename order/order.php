@@ -26,6 +26,9 @@
 		</div>
 		<div class="menu_container">
 			<?php include'../template/menu.php';?>
+			<script>
+                document.getElementById("order_link").setAttribute("class", "menu menu_active");
+            </script>
 		</div>
 
 		<h1>Make an Order</h1>
