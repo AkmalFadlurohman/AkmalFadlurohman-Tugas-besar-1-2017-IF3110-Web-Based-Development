@@ -99,5 +99,11 @@
 		<?php mysqli_close($con) ?>
 	</div>
 </body>
-
+<script type="text/javascript">
+	function chooseDriver(driver_id) {
+		document.getElementById('selected_driver').value = driver_id;
+		var form = document.getElementById('submit_select_drv');
+		form.submit();
+	}
+</script>
 </html>
