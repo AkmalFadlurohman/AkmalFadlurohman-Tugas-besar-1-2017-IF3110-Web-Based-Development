@@ -77,7 +77,7 @@
 					</div>
 					<div>
 						<span class="loc_form_label">Preferred driver</span>
-						<input type="text" name="preferred_driver">
+						<input type="text" name="preferred_driver" placeholder="(optional)">
 					</div>
 					<input type="submit" name="submit_select_loc" class="button green" id="loc_button" value="Next">
 				</div>
