@@ -27,26 +27,48 @@
 		<div class="menu_container">
 			<?php include'../template/menu.php';?>
 		</div>
+		<script>
+        	document.getElementById("order_link").setAttribute("class", "menu menu_active");
+        </script>
 
-		<h1>Make an Order</h1>
-		<div class="submenu_container">
-			<div class="submenu left">
-				Select Destination
-			</div>
-		
-			<div class="submenu mid">
-				Select a Driver
+		<div class="order_container">
+			<div class="subheader">
+        		<div class="title"><h1>Make an Order</h1></div>
+        	</div>
+			<div class="submenu_container">
+				<div class="submenu left submenu_active">
+					<div class="step_num">
+						<p>1</p>
+					</div>
+					<div class="step_name">
+						<p>Select Destination</p>
+					</div>
+				</div>
+			
+				<div class="submenu mid">
+					<div class="step_num">
+						<p>2</p>
+					</div>
+					<div class="step_name">
+						<p>Select a Driver</p>
+					</div>
+				</div>
+
+				<div class="submenu right">
+					<div class="step_num">
+						<p>3</p>
+					</div>
+					<div class="step_name">
+						<p>Complete Order</p>
+					</div>
+				</div>
 			</div>
 
-			<div class="submenu right">
-				Complete Order
-			</div>
-		</div>
-		<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
-			<div class="content" id="select_destination">
-				<div>
+
+			<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
+				<div class="content" id="select_destination">
 					<div>
-						<span>Picking point</span>
+						<span style="width: 30%;">Picking point</span>
 						<input type="text" name="picking_point">
 					</div>
 					<div>
@@ -57,10 +79,11 @@
 						<span>Preferred driver</span>
 						<input type="text" name="preferred_driver">
 					</div>
+					<input type="submit" name="submit_select_loc" class="button green" value="Next">
 				</div>
-				<input type="submit" name="submit_select_loc" class="button green">
-			</div>
-		</form>
+			</form>
+		</div>
+		
 	</div>
 </body>
 </html>
