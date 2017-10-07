@@ -102,7 +102,9 @@
 					<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
 					<input type="hidden" name="customer" value=<?php echo $user_id ?>>
 
-					<input class="button green" type="submit" name="submit" value="Complete Order">
+					<div id="finish_button_container">
+						<input id="finish_button" class="button green" type="submit" name="submit" value="Complete Order">
+					</div>
 
 				</div>
 			</form>

@@ -241,3 +241,17 @@ div#right_complete {
 	overflow-x: hidden;
 	height: inherit;
 }
+
+#finish_button {
+	width: 110px;
+	height: 50px;
+}
+
+#comment {
+	width: 90%;
+}
+
+div#finish_button_container {
+	width: 95%;
+	text-align: right;
+}
