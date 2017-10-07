@@ -67,38 +67,60 @@
 		<div class="menu_container">
 			<?php include'../template/menu.php';?>
 		</div>
+		<script>
+        	document.getElementById("order_link").setAttribute("class", "menu menu_active");
+        </script>
+        
+		<div class="order_container">
+			<div class="subheader">
+	    		<div class="title"><h1>Make an Order</h1></div>
+	    	</div>
+			<div class="submenu_container">
+				<div class="submenu left">
+					<div class="step_num">
+						<p>1</p>
+					</div>
+					<div class="step_name">
+						<p>Select Destination</p>
+					</div>
+				</div>
+			
+				<div class="submenu mid submenu_active">
+					<div class="step_num">
+						<p>2</p>
+					</div>
+					<div class="step_name">
+						<p>Select a Driver</p>
+					</div>
+				</div>
 
-		<h1>Make an Order</h1>
-		<div class="submenu_container">
-			<div class="submenu left">
-				Select Destination
-			</div>
-		
-			<div class="submenu mid">
-				Select a Driver
+				<div class="submenu right">
+					<div class="step_num">
+						<p>3</p>
+					</div>
+					<div class="step_name">
+						<p>Complete Order</p>
+					</div>
+				</div>
 			</div>
 
-			<div class="submenu right">
-				Complete Order
-			</div>
+			<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
+				<?php echo $ppoint . $dest; ?>
+				<div class="content" id="select_driver">
+					<div id="preferred_driver">
+						<h2>Preferred driver</h2>
+						<?php ShowPrefDrv($prefdrv, $con) ?>
+					</div>
+					<div id="other_driver">
+						<h2>Other drivers</h2>
+					</div>
+					<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
+					<input type="hidden" name="destination" value=<?php echo $dest?>>
+					<input type="hidden" name="selected_driver" id="selected_driver">
+				</div>
+			</form>
+			<?php mysqli_close($con) ?>
 		</div>
-		<form method="post" id="submit_select_drv" action=<?php echo "complete_order.php?id=".$user_id ?>>
-			<?php echo $ppoint . $dest; ?>
-			<div class="content" id="select_driver">
-				<div id="preferred_driver">
-					<h2>Preferred driver</h2>
-					<?php ShowPrefDrv($prefdrv, $con) ?>
-				</div>
-				<div id="other_driver">
-					<h2>Other drivers</h2>
-				</div>
-				<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
-				<input type="hidden" name="destination" value=<?php echo $dest?>>
-				<input type="hidden" name="selected_driver" id="selected_driver">
-			</div>
-		</form>
-		<?php mysqli_close($con) ?>
-	</div>
 </body>
 <script type="text/javascript">
 	function chooseDriver(driver_id) {

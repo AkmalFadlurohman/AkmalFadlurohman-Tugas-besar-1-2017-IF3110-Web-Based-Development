@@ -1,57 +1,109 @@
-.frame > h1 {
-	text-align: left;
+.order_container {
+	height: 79%;
+}
+
+.order_container .subheader {
+	height: 10%;
 }
 
 .submenu_container {
-	width: 360px;
-	display: inline-flex;
-	margin-left: auto; 
-	margin-right: auto;
+	width: 100%;
+	display: table;
+	border-collapse: separate;
+	border-spacing: 10px;
 }
 
 .submenu {
-	width: 100px;
+	display: table-cell;
+	width: 30%;
 	height: 40px;
-	float: left;
 	border: 0.5px solid black;
 	font-size: 15px;
-	text-align: center;
+	position: relative;
+}
+
+.submenu br {
+	clear:both;
+}
+
+.submenu_active {
+	background-color: #fffe9f; 
 }
 
 .submenu.left {
-	float: left;
-}
 
+}
 .submenu.mid {
-	margin-left: 29px;
-	margin-right: 29px;
+	margin: 0 5% 0;
 }
 
-.submenu.right {
+div.step_num {
+	float: left;
+	width: 20%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+div.step_name {
 	float: right;
+	height: 100%;
+	vertical-align: middle;
+}
+
+div.step_num p {
+	margin: 10px 0 0 2px;
+	text-align: center;
+	width: 25px;
+	padding: 2% 0;
+	background-color: grey;
+	border-radius: 50%;
+}
+
+div.step_name p {
+	margin: 0 0 0 15px;
+}
+
+.submenu p {
+	margin: 0;
+	position: absolute;
+	top: 0%;
+	vertical-align: middle;
+}
+
+div.step_name {
+	float: right;
+	width: 80%;
+	text-align: left;
 }
 
 .content {
 	width: 350px;
-	margin-top: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 5px;
 }
 
-.content > div {
-	margin: 5px 0px 5px 0px;
+.content div {
+	margin-bottom: 15px;
+	vertical-align: middle;
 }
 
-.content > div div {
-	display: inline;
-}
-.content > div > span {
-	float: left;
+.content span {
+	width: 35%;
+	margin-right: auto;
 }
 
-.content > div > input[type="text"] {
-	width: 100px; 
+.content input[type=text] {
+	width: 65%;
+	height: 20px;
 	float: right;
+}
+
+.content input[type=submit] {
+	position: absolute;
+	margin: 10px;
+	left: 45%;
+	width: 60px;
+	height: 30px;
+
 }
 
 #select_driver div {	
@@ -61,15 +113,12 @@
 #preferred_driver {
 }
 
-form#submit_cmplt_ordr div {
-	size: 
-}
-
 .star {
-	font-size: 50px;
-	color: gray;
+	size: 300%;
+	color: yellow;
 }
 
 #order_link {
     background-color: #465d43;
 }
+
