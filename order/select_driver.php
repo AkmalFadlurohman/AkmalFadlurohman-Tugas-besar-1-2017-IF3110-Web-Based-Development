@@ -21,6 +21,28 @@
                     $username = $row['username'];
                     include("../template/header.php");
                 }
+
+                //===========================================
+
+                $ppoint = $_POST['picking_point'];
+				$dest = $_POST['destination'];
+				$prefdrv = $_POST['preferred_driver'];
+				
+				function ShowPrefDrv($prefdrv, $con)
+				{
+					if (!(is_null($prefdrv))) {
+						$pdQuery = mysqli_query($con, "SELECT * FROM driver RIGHT OUTER JOIN (SELECT user_id FROM user WHERE name='" . $prefdrv . "') AS usert ON user_id = driver_id;") or die(mysqli_error($con));
+
+						$row = mysqli_fetch_assoc($pdQuery);
+
+
+					}
+					else
+					{
+						echo "<h2>Nothing to display :(</h2>";
+					}
+				}
+				ShowPrefDrv($prefdrv, $con);
                 mysqli_close($con);
             ?>
 		</div>
@@ -42,8 +64,8 @@
 				Complete Order
 			</div>
 		</div>
-		<form method="post">
-			<div class="content" id="select_driver" style="display: none;">
+		<form method="post" action="complete_order.php">
+			<div class="content" id="select_driver">
 				<div id="preferred_driver">
 					<h2>Preferred driver</h2>
 				</div>

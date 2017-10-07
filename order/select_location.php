@@ -42,7 +42,7 @@
 				Complete Order
 			</div>
 		</div>
-		<form method="post">
+		<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
 			<div class="content" id="select_destination">
 				<div>
 					<div>
@@ -58,9 +58,7 @@
 						<input type="text" name="preferred_driver">
 					</div>
 				</div>
-				<div class="button green" onclick="showSelectDriver()">
-					Next
-				</div>
+				<input type="submit" name="submit_select_loc" class="button green">
 			</div>
 		</form>
 	</div>
