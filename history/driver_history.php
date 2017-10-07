@@ -64,17 +64,19 @@
                                     $driver_query=mysqli_query($con,"SELECT username FROM user WHERE user_id='".$row['cust_id']."'") or die(mysqli_error());
                                     $driver_row=mysqli_fetch_assoc($driver_query);
                                     $driver_name=$driver_row['username'];
+                                    $given_score=(int)$row['score'];
+
                                     echo
                                         "<tr>
                                             <td>
                                                 <img class='history_pict' src='../profile/getProfilePict.php?id=".$row['cust_id']."'>
                                                 <button class='hide_hist_button' type='button' value='hide' onclick='hide_row(this)'>Hide</button>
                                             </td>
-                                            <td>
+                                            <td class='order_data'> 
                                                 <p class='history_date'>".$row['date']."</p>
                                                 <p class='history_username'>".$driver_name."</p>
                                                 <p class='history_loc'>".$row['pick_city']." - ".$row['dest_city']."</p>
-                                                <p class='history_rating'>gave ".$row['score']." stars for this order</p>
+                                                <p class='history_rating'>gave <span class='yellow_score'>&nbsp&nbsp".$given_score."&nbsp</span> stars for this order</p>
                                                 <p class='history_comment'>and left comment:</p>
                                                 <p class='history_comment' style='margin-left: 30px;'>".$row['comment']."</p>
                                             </td>

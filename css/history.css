@@ -52,7 +52,7 @@ table.history_table {
 }
 
 table.history_table p {
-	margin: 0;
+	margin: 5px 0;
 	padding: 0;
 	font-style: "Lucida Console", Monaco, monospace;
 }
@@ -85,11 +85,11 @@ p.history_comment {
 }
 
 table.history_table th, td {
-    padding: 5px;
+    padding: 0 5px;
     border-collapse: collapse;
 }
 
-p.history_table td {
+table.history_table tr td.order_data {
 	vertical-align: top;
 }
 
@@ -102,9 +102,20 @@ img.history_pict {
     
 }
 
-.hide_hist_button {
+button.hide_hist_button {
 	margin: 0;
 	color: white;
 	background-color: red;
 	font-size: 9px;
+	margin-bottom: 45px;
+}
+
+.checked {
+	color:orange
+}
+
+.yellow_score {
+	font-size: 20px;
+	color: orange;
+	vertical-align: middle;
 }
