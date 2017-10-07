@@ -96,7 +96,6 @@
 						<input type="hidden" name="rating" id="rating">
 					</div>
 					<textarea id="comment" name="comment" form="submit_cmplt_ordr" rows="8" cols="35" placeholder="Your comment..."></textarea>
-
 					<input type="hidden" name="picking_point" value=<?php echo $ppoint ?>>
 					<input type="hidden" name="destination" value=<?php echo $dest ?>>
 					<input type="hidden" name="selected_driver" value=<?php echo $seldrv ?>> 
