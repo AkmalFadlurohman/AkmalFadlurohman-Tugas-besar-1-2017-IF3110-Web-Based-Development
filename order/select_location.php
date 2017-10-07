@@ -68,7 +68,7 @@
 			<form method="post" action=<?php echo "select_driver.php?id=" . $user_id;?>>
 				<div class="content" id="select_destination">
 					<div>
-						<span style="width: 30%;">Picking point</span>
+						<span>Picking point</span>
 						<input type="text" name="picking_point">
 					</div>
 					<div>
