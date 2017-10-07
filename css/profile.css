@@ -30,13 +30,14 @@
     padding: 0px;
 }
 .prefloc_container {
-    height: 50%;
+    height: 30%;
     margin-top : 0%;
     overflow-y : scroll;
 }
 .prefloc_list ul {
     list-style-type: none;
     margin: 0;
+    padding: 23px;
 }
 .prefloc_list ul:first-child {
      padding-left: 0px;
