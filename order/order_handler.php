@@ -16,5 +16,5 @@
 
 	mysqli_close($con);
 	
-	header('Location: order.php');	
+	header("Location: order.php?id=$cust_id");	
 ?>
