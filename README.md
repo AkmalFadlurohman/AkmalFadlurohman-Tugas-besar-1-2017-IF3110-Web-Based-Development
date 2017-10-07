@@ -82,7 +82,7 @@ Tugas ini dikerjakan bersama-sama dengan saling berdiskusi dan membantu. Pembagi
 3. Order - Pilih lokasi : 13515005, 13515050
 4. Order - Pilih driver : 13515005, 13515050
 5. Order - Complete order : 13515005, 13515050
-6. Profile : 13515074, 13515050
+6. Profile : 13515074, 13515050, 13515005
 7. Edit profile : 13515074 13515050
 8. Edit preferred location : 13515074, 13515050
 9. Driver History : 13515050
