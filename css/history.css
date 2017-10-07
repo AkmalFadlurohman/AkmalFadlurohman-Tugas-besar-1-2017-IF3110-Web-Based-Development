@@ -76,11 +76,11 @@ img.history_pict {
 }
 
 button.hide_hist_button {
+	margin-top: -7px;
 	margin: 0;
 	color: white;
 	background-color: red;
-	font-size: 9px;
-	margin-bottom: 45px;
+	font-size: 15px;
 }
 
 .checked {
@@ -99,4 +99,21 @@ ul#history_nav.nav_bar > li {
 	
 ul#history_nav {
 	margin-bottom: 7px;
+}
+
+div.left_data {
+	width: 75%;
+	float: left;
+	margin-bottom: 30px;
+}
+
+div.right_data {
+
+	width: 25%;
+	float: right;
+	position: relative;
+}
+
+td.img_col {
+	vertical-align: top;
 }
